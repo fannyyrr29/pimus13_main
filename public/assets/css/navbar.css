@@ -1,0 +1,52 @@
+.navbar {
+    background-color: #312f60 !important;
+}
+.navbar li a {
+    font-weight: bold;
+    color: #ffffff !important;
+    transition: color 0.15s ease-in-out;
+}
+
+.navbar li a:hover {
+    color: #ebb014 !important;
+}
+
+.navbar .btnLogin {
+    display: inline-block;
+    width: 100px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 50px;
+    background-color: #25244b;
+    border: 1px solid #fff;
+    box-shadow: 1px 1px 1px #fff;
+
+    color: #ffffff !important;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+        border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.navbar .btnLogin:hover {
+    background-color: #5a5b8a;
+    color: #faba8e !important;
+}
+
+.nav-center {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.nav-item .dropdown-menu {
+    background-color: #312f60;
+}
+
+@media (max-width: 991px) {
+    .nav-center {
+        text-align: center !important;
+        margin: 5px 0;
+    }
+
+    .btnLogin {
+        margin-bottom: 5px;
+    }
+}
