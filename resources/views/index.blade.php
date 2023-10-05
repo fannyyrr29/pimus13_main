@@ -24,11 +24,18 @@
                         <div class="col-lg-6 align-self-center">
                             <div class="left-content header-text wow fadeInLeft" data-wow-duration="1s" data-wow-delay="1s">
                                 <h6><img src="{{ url('assets/images/web/Asset 1.png') }}" alt=""> </h6>
-                                <p style="color: #fff; font-weight: bold;">XII-ATHLON: PREPARE FOR YOUR TRIUMPH</p>
+                                <p style="color: #fff; font-weight: bold;">PROGRESS SI RAPAT PROGRESS 1</p>
+                                <ul>
+                                    <li style="color: #fff;text-align:justify !important; text-justify:inter-word; list-style:auto;" font size="1" >Seperti yang kalian lihat ini udah dihosting https://ubayapimus.com</li>
+                                    <li style="color: #fff;text-align:justify !important; text-justify:inter-word; list-style:auto;" font size="1" >Mohon bersabar asset untuk mengupdate website ini kita masih menunggu DDD</li>
+                                    <li style="color: #fff;text-align:justify !important; text-justify:inter-word; list-style:auto;" font size="1" >Kita juga menunggu ketentuan-ketentuan yang fix dari tanggal serta ketentuan Lomba per cabangnya</li>
+                                    <li style="color: #fff;text-align:justify !important; text-justify:inter-word; list-style:auto;" font size="1" >Apakah Exihibiton online/offline? yang mana yaitu</li>
+                                </ul>
+                                {{-- <p style="color: #fff; font-weight: bold;">XII-ATHLON: PREPARE FOR YOUR TRIUMPH</p>
                                 <p style="color: #fff;text-align:justify !important; text-justify:inter-word" font size="1" >Para <i>conqueror</i> yang telah berhasil memulihkan dunia dan melihat <i>gate</i>
                                     yang mengarahkan mereka ke Earth 2.0. Mereka harus meng-<i>unlock</i> area baru ini menggunakan komponen. Setelah
                                     semua di-<i>unlock</i>, mereka harus berpisah ke setiap <i>district</i> yang membuat mereka dapat menduduki kedudukan
-                                    tertinggi di Earth 2.0, yaitu  <b>Throne of Triumph.</b></h6>
+                                    tertinggi di Earth 2.0, yaitu  <b>Throne of Triumph.</b></h6> --}}
 
                             </div>
                         </div>
