@@ -990,8 +990,11 @@ About Us Style
 
 
 .about-us .services .item .icon img {
-  max-width: 70px;
+  max-width: 110px;
+  margin-left: 1rem;
 }
+
+
 
 .about-us .services .item h4 {
   color: #fff;
