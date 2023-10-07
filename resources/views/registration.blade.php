@@ -163,7 +163,7 @@
             </div>
             <div class="modal-body">
                 <p>
-                    Peserta melengkapi berkas yang dibutuhkan untuk pendaftaran sesuai dengan pedoman cabang/PKM yang diikuti. Pedoman dapat dilihat <a href='https://tinyurl.com/PedomanPimus13' target='_blank'>disini</a>.<br>
+                    1. Peserta melengkapi berkas yang dibutuhkan untuk pendaftaran sesuai dengan pedoman cabang/PKM yang diikuti. Pedoman dapat dilihat <a href='https://tinyurl.com/PedomanPimus13' target='_blank'>disini</a>.<br>
                     2. Pendaftaran dapat dilakukan pada website <a href='https://ubayapimus.com' target='_blank'>ubayapimus.com</a><br>
                     3. Peserta harus register/sign up terlebih dahulu pada website.<br>
                         <small class='text-danger'>Note &#58; Jika mendaftar berkelompok, maka seluruh anggota harus register/sign up terlebih dahulu pada website sebelum melakukan pendaftaran.</small><br>

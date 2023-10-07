@@ -158,7 +158,7 @@ class RegisterLomba extends Controller
                 break;
                 case 5:
                     $jenisKompetisi = $req->jenisKompetisi;
-                    DB::table('user_details')->where('nrp', $req->nrpAnggota[0])->update([
+                    DB::table('user_details')->where('nrp', $req->nrpAnggota[0])->where('teams_id',$idkelompok)->update([
                         'competition_type' => $jenisKompetisi
                     ]);
                 break;
