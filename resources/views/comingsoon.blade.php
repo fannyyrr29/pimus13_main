@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>PIMUS 12</title>
+    <title>PIMUS 13</title>
     <link href="{{ url('/assets/images/web/IconPIMUS.ico') }}" rel="shorcut icon">
     <!-- Bootstrap -->
     <!-- Bootstrap core CSS -->

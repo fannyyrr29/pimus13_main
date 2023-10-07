@@ -6,7 +6,7 @@
 @extends('layout.mainweb')
 
 @section('title')
-    PIMUS 12 - Registration
+    PIMUS 13 - Registration
 @endsection
 
 @section('style')
@@ -67,7 +67,7 @@
                         </div>
                     </a>
                 </div>
-                <div class='col-lg-3 col-sm-6 mb-5'>
+                {{-- <div class='col-lg-3 col-sm-6 mb-5'>
                     <a href='/registration/cabang?cabang=4'>
                         <div class='item wow bounceInUp' data-wow-duration='1s' data-wow-delay='0.4s'>
                             <div class='hidden-content'>
@@ -79,7 +79,7 @@
                             </div>
                         </div>
                     </a>
-                </div>
+                </div> --}}
        
                 <div class='col-lg-4 col-sm-6 mb-5'>
                     <a href='/registration/cabang?cabang=5'>
@@ -107,11 +107,11 @@
                         </div>
                     </a>
                 </div>
-                {{-- <div class='col-lg-3 col-sm-6 mb-5'>
+                <div class='col-lg-3 col-sm-6 mb-5'>
                     <a href='/registration/cabang?cabang=6'>
                         <div class='item wow bounceInUp' data-wow-duration='1s' data-wow-delay='0.4s'>
                             <div class='hidden-content'>
-                                <h4>Poster Digital</h4>
+                                <h4>Poster</h4>
                                 <p>Kompetisi untuk menyampaikan informasi dalam bentuk visual sesuai dengan tema yang ditentukan. </p>
                             </div>
                             <div class='showed-content'>
@@ -119,12 +119,26 @@
                             </div>
                         </div>
                     </a>
-                </div> --}}
+                </div>
                 <div class='col-lg-4 col-sm-6 mb-5'>
                     <a href='/registration/cabang?cabang=8'>
                         <div class='item wow bounceInUp' data-wow-duration='1s' data-wow-delay='0.5s'>
                             <div class='hidden-content'>
                                 <h4>PKM</h4>
+                                <p>Kompetisi untuk mengkaji, mengembangkan, dan menerapkan ilmu serta teknologi kepada masyarakat luas.
+                                </p>
+                            </div>
+                            <div class='showed-content'>
+                                <img src='/assets/images/icon cabang/PKM-Riset Sosial Humaniora.png' alt=''>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class='col-lg-4 col-sm-6 mb-5'>
+                    <a href='/registration/cabang?cabang=12'>
+                        <div class='item wow bounceInUp' data-wow-duration='1s' data-wow-delay='0.5s'>
+                            <div class='hidden-content'>
+                                <h4>Ide Bisnis</h4>
                                 <p>Kompetisi untuk mengkaji, mengembangkan, dan menerapkan ilmu serta teknologi kepada masyarakat luas.
                                 </p>
                             </div>
@@ -149,16 +163,16 @@
             </div>
             <div class="modal-body">
                 <p>
-                    1. Peserta melengkapi berkas yang dibutuhkan untuk pendaftaran sesuai dengan pedoman cabang/PKM yang diikuti. Pedoman dapat dilihat <a href='https://drive.google.com/drive/folders/11A7k7Ng94aJzfCg4UygO67BsS-D3IEQI' target='_blank'>disini</a>.<br>
-                    2. Pendaftaran dapat dilakukan pada website <a href='https://pimusubaya.com' target='_blank'>pimusubaya.com</a><br>
-                    3.  Peserta harus register/sign up terlebih dahulu pada website.<br>
+                    Peserta melengkapi berkas yang dibutuhkan untuk pendaftaran sesuai dengan pedoman cabang/PKM yang diikuti. Pedoman dapat dilihat <a href='https://tinyurl.com/PedomanPimus13' target='_blank'>disini</a>.<br>
+                    2. Pendaftaran dapat dilakukan pada website <a href='https://ubayapimus.com' target='_blank'>ubayapimus.com</a><br>
+                    3. Peserta harus register/sign up terlebih dahulu pada website.<br>
                         <small class='text-danger'>Note &#58; Jika mendaftar berkelompok, maka seluruh anggota harus register/sign up terlebih dahulu pada website sebelum melakukan pendaftaran.</small><br>
                     4. Peserta mengupload formulir pendaftaran dan seluruh berkas yang dibutuhkan sesuai dengan cabang/PKM yang diikuti.<br>
                         <small class='text-danger'>Note &#58; File formulir pendaftaran terdapat di folder berkas wajib.</small><br>
                     5. Perhatikan ketentuan pada saat mendaftar dan pastikan telah sesuai.<br>
                     6. Berkas yang telah disubmit saat pendaftaran akan dilakukan pengecekan oleh panitia.<br>
                     7. Jika berkas yang dikumpulkan tidak sesuai dengan ketentuan, panitia akan menghubungi ketua kelompok untuk mensubmit ulang berkas pendaftaran.<br>
-                    8. Jika hingga batas akhir pendaftaran, berkas yang dikumpulkan tidak sesuai maka peserta dianggap <b>TIDAK TERDAFTAR SEBAGAI PESERTA PIMUS XII.</b><br>
+                    8. Jika hingga batas akhir pendaftaran, berkas yang dikumpulkan tidak sesuai maka peserta dianggap <b>TIDAK TERDAFTAR SEBAGAI PESERTA PIMUS XIII.</b><br>
                 </p>
             </div>
             </div>
