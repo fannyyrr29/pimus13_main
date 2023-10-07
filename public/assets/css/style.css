@@ -594,6 +594,7 @@
 .form-login-register .colorText{
     color: #ffffff;
     margin-bottom: 10px;
+    white-space: nowrap;
 }
 
 .form-login-register input::placeholder {
