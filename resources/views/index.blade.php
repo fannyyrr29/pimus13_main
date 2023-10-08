@@ -123,9 +123,9 @@
     <!-- Throwback Pimus -->
     <div id="services" class="our-services section">
         <div class="container">
-            <h2 class="mb-5"
-                style=" color: #ffffff; text-align: center; font-family: joyrideextended, Montserrat, sans-serif; text-transform: none;"
-                data-aos="zoom-in">pekan ilmiah mahasiswa</h2>
+            <h2 class="mb-5" style=" color: #ffffff; text-align: center; text-transform: none; font-family: archieve;"
+                data-aos="zoom-in">pekan
+                ilmiah mahasiswa</h2>
             <div class="row">
                 <div class="col-lg-6 align-self-center  wow fadeInLeft" data-wow-duration="1s" data-wow-delay="0.2s">
                     <div class="left-image drive-responsive">
