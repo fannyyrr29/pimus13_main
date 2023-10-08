@@ -77,14 +77,16 @@
                                     <div class="icon">
                                         <i class="fas fa-film" style="height: 175px; width: 130px; color: #a472e1;"></i>
                                     </div>
-                                    <div class="right-text">
-                                        <p>Video Digital Pendidikan merupakan cabang baru yang menggantikan cabang Film
+                                    <div class="right-text h-100 align-self-center">
+                                        <p>Video Digital Pendidikan merupakan cabang baru yang
+                                            menggantikan cabang Film
                                             Pendek pada PIMUS sebelumnya</p>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-lg-6">
-                                <div data-tilt class="item wow fadeIn d-flex" data-wow-duration="1s" data-wow-delay="0.9s">
+                                <div data-tilt class="d-flex item wow fadeIn d-flex" data-wow-duration="1s"
+                                    data-wow-delay="0.9s">
                                     <div class="icon">
                                         {{-- <i class="fas fa-hand-holding-heart"
                                             style="height: 175px; width: 100px; color: #faba8e;"></i> --}}
@@ -92,7 +94,7 @@
                                                 class="align-items-center mt-4"
                                                 style="height: 155px; width: 130px; color: #a472e1;"></i>
                                     </div>
-                                    <div class="right-text">
+                                    <div class="right-text align-self-center">
                                         <p>Maskot PIMUS merupakan burung hantu yang bernama Dr. Pimsy. Burung hantu
                                             merupakan hewan yang melambangkan pengetahuan, kebijaksanaan, dan pembawa
                                             perubahan</p>
@@ -100,12 +102,12 @@
                                 </div>
                             </div>
                             <div class="col-lg-6">
-                                <div data-tilt class="item wow fadeIn" data-wow-duration="1s" data-wow-delay="1.1s">
+                                <div data-tilt class="d-flex item wow fadeIn" data-wow-duration="1s" data-wow-delay="1.1s">
                                     <div class="icon h-100 mt-3">
                                         <i class="fas fa-hands-helping"
                                             style="height: 180px; width: 130px; color: #a472e1;"></i>
                                     </div>
-                                    <div class="right-text ">
+                                    <div class="right-text align-self-center">
                                         <p>Logo PIMUS berupa tangan-tangan dengan warna yang melambangkan setiap fakultas
                                             dan politeknik saling menggenggam satu sama lain dengan piala di bagian tengah
                                             yang diperebutkan</p>
@@ -123,9 +125,14 @@
     <!-- Throwback Pimus -->
     <div id="services" class="our-services section">
         <div class="container">
-            <h2 class="mb-5" style=" color: #ffffff; text-align: center; text-transform: none; font-family: archieve;"
-                data-aos="zoom-in">pekan
-                ilmiah mahasiswa</h2>
+
+            <div class="mt-5 mb-5 d-flex w-100 justify-content-center">
+                <div class="mt-3 desc-background w-50 text-center ">
+                    <h2 style=" color: #ffffff; text-align: center; text-transform: none; font-family: archieve;"
+                        data-aos="zoom-in">pekan
+                        ilmiah mahasiswa</h2>
+                </div>
+            </div>
             <div class="row">
                 <div class="col-lg-6 align-self-center  wow fadeInLeft" data-wow-duration="1s" data-wow-delay="0.2s">
                     <div class="left-image drive-responsive">
@@ -136,11 +143,14 @@
                 <div class="col-lg-6 wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.2s">
 
                     <div class="section- desc-background">
-                        <p style="color: #fff; text-align:justify !important; " class="text-justify">Pekan Ilmiah Mahasiswa
+                        <p style="color: #fff; text-align:justify !important; " class="text-justify">Pekan Ilmiah
+                            Mahasiswa
                             Universitas Surabaya atau PIMUS merupakan acara tahunan yang diselenggarakan
-                            oleh Direktorat Pengembangan Kemahasiswaan Universitas Surabaya dengan tujuan untuk menyaring
+                            oleh Direktorat Pengembangan Kemahasiswaan Universitas Surabaya dengan tujuan untuk
+                            menyaring
                             mahasiswa/i terbaik UBAYA
-                            untuk menjadi perwakilan pada kompetisi nasional. Di tahun yang kesebelas ini, PIMUS memiliki 7
+                            untuk menjadi perwakilan pada kompetisi nasional. Di tahun yang kesebelas ini, PIMUS
+                            memiliki 7
                             cabang lomba yang terdiri
                             dari PKM 4 Bidang (PKM RSH, PKM K, PKM PM, PKM KC), Karya Tulis Ilmiah, Pemilihan Mahasiswa
                             Berprestasi, Video Digital Pendidikan,
@@ -157,8 +167,13 @@
     <!-- End Throwback Pimus -->
 
     <!-- Timeline Pimus -->
-    <h1 style="color: #ffffff; margin-top: 1em ; text-align: center; font-family: joyrideextended, Montserrat, sans-serif;"
-        data-aos="zoom-in">timeline pimus xii</h1>
+    <div class="mt-5 d-flex w-100 justify-content-center">
+        <div class="mt-3 desc-background w-50 text-center ">
+            <h1 style="color: #ffffff; text-align: center; font-family: archieve, Montserrat, sans-serif;"
+                data-aos="zoom-in">
+                timeline pimus xii</h1>
+        </div>
+    </div>
     <link rel="stylesheet" href="{{ url('/assets/css/timeline.css') }}">
     <div class="content">
         <div class="timeline col-lg-6 wow fadeInRight">
