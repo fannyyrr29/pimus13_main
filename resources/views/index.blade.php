@@ -180,25 +180,25 @@
             <ul>
                 <li>
                     <div class="timeline-content">
-                        <h3 style="color: #ffffff" class="date">7-14 November 2022</h3>
+                        <h3 style="color: #ffffff" class="date">10-31 Oktober 2023</h3>
                         <h1 class="text-center">Open Registration </h1>
                     </div>
                 </li>
                 <li>
                     <div class="timeline-content">
-                        <h3 style="color: #ffffff" class="date">17-18 November 2022</h3>
+                        <h3 style="color: #ffffff" class="date">6-7 November 2023</h3>
                         <h1 class="text-center">Technical Meeting</h1>
                     </div>
                 </li>
                 <li>
                     <div class="timeline-content">
-                        <h3 style="color: #ffffff" class="date">23-24 November 2022</h3>
+                        <h3 style="color: #ffffff" class="date">10-11 November 2023</h3>
                         <h1>Klinik PKM, PILMAPRES, Video Digital Pendidikan, KTI</h1>
                     </div>
                 </li>
                 <li>
                     <div class="timeline-content">
-                        <h3 style="color: #ffffff" class="date">24-30 November 2022</h3>
+                        <h3 style="color: #ffffff" class="date">27 November-1 Desember 2023</h3>
                         <h1>Pengumpulan Proposal untuk di Revisi (PKM, KTI, dan Pilmapres)</h1>
                     </div>
                 </li>

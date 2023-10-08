@@ -195,6 +195,9 @@
         height: 6px;
         margin: 4px;
     }
+    .icon{
+        padding: 1rem;
+    }
 }
 
 /*FAQ*/
