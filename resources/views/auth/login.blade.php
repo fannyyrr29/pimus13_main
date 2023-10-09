@@ -14,26 +14,41 @@
                     <form method="POST" action="{{ route('login') }}" class="form-login-register">
                         @csrf
                         <div class="transBox">
-                            <div class="transBox2">
-                                <p class="colorText">USERNAME: </p>
-                                <input id="email" type="text" class="@error('email') is-invalid @enderror" placeholder=""
-                                    name="email" required autocomplete="text" maxlength=10 autofocus>
-                                @error('email')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                            <div class="transBox2">
-                                <p class="colorText">PASSWORD: </p>
-                                <input id="password" type="password" class="@error('password') is-invalid @enderror"
-                                    placeholder="" name="password" required autocomplete="current-password">
-                                @error('password')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
+                            <table>
+                                <tr>
+                                    <div class="transBox2">
+                                        <td style="width: 150px">
+                                            <p class="colorText">SNRP: </p>
+                                        </td>
+                                        <td>
+                                            <input id="email" type="text" class="@error('email') is-invalid @enderror" placeholder=""
+                                            name="email" required autocomplete="text" maxlength=10 autofocus>
+                                        </td>
+                                        @error('email')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
+                                    </div>
+                                </tr>
+                                <tr>
+                                    <div class="transBox2">
+                                        <td>
+                                            <p class="colorText">PASSWORD: </p>
+                                        </td>
+                                        <td>
+                                            <input id="password" type="password" class="@error('password') is-invalid @enderror"
+                                            placeholder="" name="password" required autocomplete="current-password">
+                                        </td>
+                                        @error('password')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
+                                    </div>
+                                </tr>
+                                
+                            </table>
                         </div>
                         @if (Route::has('password.request'))
                             <a class="forget" href="{{ route('password.request') }}">

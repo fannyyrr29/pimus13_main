@@ -81,7 +81,7 @@
                             <table>
                                 <tr>
                                     <div class="transBox2">
-                                        <td>
+                                        <td style="width: 200px">
                                             <p class="colorText">NAMA LENGKAP: </p>
                                         </td>
                                         <td>
@@ -123,7 +123,7 @@
                                             <p class="colorText">PASSWORD: </p>
                                         </td>
                                         <td>
-                                            <input type="password" name="password" placeholder=""
+                                            <input type="password" name="password" placeholder="Min. 8 Characters"
                                             class="@error('password') is-invalid @enderror" required autocomplete="new-password">
                                         </td>
                                     @error('password')
@@ -139,7 +139,7 @@
                                             <p class="colorText">RETYPE PASSWORD: </p>
                                         </td>
                                         <td>
-                                            <input type="password" name="password_confirmation" placeholder=""
+                                            <input type="password" name="password_confirmation" placeholder="Min. 8 Characters"
                                             class="@error('password_confirmation') is-invalid @enderror" autocomplete="new-password">
                                             @error('password_confirmation')
                                                 <span class="invalid-feedback" role="alert">
