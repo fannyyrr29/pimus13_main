@@ -56,9 +56,9 @@
                     <li class="nav-item">
                         <a class="nav-link nav-center" href="{{ url('/registration') }}">Registration</a>
                     </li>
-                    <li class="nav-item">
+                    {{-- <li class="nav-item">
                         <a class="nav-link nav-center" href="{{ url('/submission') }}">Submission</a>
-                    </li>
+                    </li> --}}
                     <li class="nav-item nav-center dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
                             aria-haspopup="true" aria-expanded="false">

@@ -119,7 +119,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-6 wow fadeInRight" data-wow-duration="1s" data-wow-delay="1s">
+                {{-- <div class="col-lg-6 wow fadeInRight" data-wow-duration="1s" data-wow-delay="1s">
                     <form id="contact" action="" method="post">
                         <div class="row">
                             <div class="col-lg-6">
@@ -153,7 +153,7 @@
                         </div>
 
                     </form>
-                </div>
+                </div> --}}
                 <div class="phone-info col-lg-6 wow fadeInLeft">
                     <h4 style="color: #ffffff">Contact Us</h4>
                     <h2 style="color: #ffffff"><a style="color: #ffffff" href="https://www.instagram.com/pimus12/"

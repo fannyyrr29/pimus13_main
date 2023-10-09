@@ -29,7 +29,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
         return view('registerlomba');
     });
     Route::post('/registration/cabang/upload', 'RegisterLomba@upload');
-    Route::get('/submission', 'SubmissionController@index')->name('submission');
+    // Route::get('/submission', 'SubmissionController@index')->name('submission');
     Route::post('submitlink', "SubmissionController@submitLink")->name('submitlink');
     Route::post('/exhibition/{id}/vote', 'ExhibitionController@vote')->name('exhibition.vote');
     Route::get('/registration/cabang/register', 'RegisterLomba@showRegister');

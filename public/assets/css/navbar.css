@@ -8,7 +8,7 @@
 }
 
 .navbar li a:hover {
-    color: #ebb014 !important;
+    color: #ea2927 !important;
 }
 
 .navbar .btnLogin {
@@ -33,7 +33,7 @@
 }
 .navbar .btnLogin:hover {
     background-color: #5a5b8a;
-    color: #faba8e !important;
+    color: #ffc107 !important;
 }
 
 .nav-center {

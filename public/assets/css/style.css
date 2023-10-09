@@ -233,7 +233,7 @@
     padding: 21px;
     width: 30px;
     height: 30px;
-    background: url(../images/faq/add.png) no-repeat 9px 9px #faba8e;
+    background: url(../images/faq/add.png) no-repeat 9px 9px #ea2927;
     border-radius: 50px;
     float: left;
     transition: all 0.5s ease-in;
@@ -256,7 +256,7 @@
 }
 
 .active-faq {
-    background-color: #faba8e;
+    background-color: #ffc107;
     color: #fff;
 }
 
@@ -575,7 +575,7 @@
 /* LOGIN */
 
 .form-login-register input {
-    margin-bottom: 10px;
+
     margin-left: 10px;
     border: 0px solid transparent !important;
     background-color:rgba(150, 100, 200, .7);
@@ -607,6 +607,16 @@
     white-space: nowrap;
     font-family: 'pixels';
     font-size: 25px;
+}
+
+@media screen and (max-width:576px) {
+    .form-login-register .colorText{
+        color: #ffffff;
+        margin-bottom: 10px;
+        white-space: nowrap;
+        font-family: 'pixels';
+        font-size: 18px;
+    }
 }
 
 .form-login-register input::placeholder {
