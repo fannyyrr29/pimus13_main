@@ -29,6 +29,7 @@
     .form-login-register input{
         margin-left: 0 !important; 
         color: #fff !important;
+        margin-bottom: 0 !important;
     }
     .form-login-register .transBox{
         padding: 28px 20px;
@@ -36,6 +37,8 @@
     .transBox2{
         position: relative;
         color: #fff;
+        display: flex;
+        flex-direction: column;
     }
     .transBox2 label{
         position: absolute;
@@ -157,47 +160,61 @@
                     <form method="POST" action="{{ route('register') }}" class="form-login-register form-regis-hp">
                         @csrf
                         <div class="transBox">
-                            <div class="transBox2">
+                            <div class="input-field">
+                                <div class="transBox2">
             
-                                <input type="text" name="nama" placeholder=""
-                                    class="@error('nama') is-invalid @enderror" required autofocus autocomplete="name">
-                                <label for='nama' class="colorText">NAMA LENGKAP </label>
-                            </div>
-                            @error('nama')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                            @enderror
-
-                            <div class="transBox2">
-            
-                                <input type="text" id="nrp" name="nrp" placeholder=""
-                                    class="@error('nrp') is-invalid @enderror" maxlength="9" required>
-                                    <label class="colorText">NRP </label>
-                                @error('nrp')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
+                                    <input type="text" name="nama" placeholder=""
+                                        class="@error('nama') is-invalid @enderror" required autofocus autocomplete="name">
+                                    <label for='nama' class="colorText">NAMA LENGKAP </label>
+                                </div>
+                                @error('nama')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
                                 @enderror
-                                <!-- <input type="email" id="email" name="email" placeholder="Email Gooaya" class="@error('email') is-invalid @enderror"
-                                                    required readonly>
-                                                @error('email')
-                                                            <span class="invalid-feedback" role="alert">
-                                                                <strong>{{ $message }}</strong>
-                                                            </span>
-                                                @enderror -->
                             </div>
-                            <div class="transBox2">
-                                <input type="password" name="password" placeholder=""
-                                    class="@error('password') is-invalid @enderror" required autocomplete="new-password">
-                                <label class="colorText">PASSWORD </label>
+                            
+                            <div class="input-field">
+                                <div class="transBox2">
+            
+                                    <input type="text" id="nrp" name="nrp" placeholder=""
+                                        class="@error('nrp') is-invalid @enderror" maxlength="9" required>
+                                        <label class="colorText">NRP </label>
+                                </div>
+                                @error('nrp')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
+                            <!-- <input type="email" id="email" name="email" placeholder="Email Gooaya" class="@error('email') is-invalid @enderror"
+                                    required readonly>
+                                @error('email')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                @enderror -->
+                            </div>
+                           
+                            <div class="input-field">
+                                <div class="transBox2">
+                                    <input type="password" name="password" placeholder=""
+                                        class="@error('password') is-invalid @enderror" required autocomplete="new-password">
+                                    <label class="colorText">PASSWORD <span>(Min. 8 Characters)</span> </label>
+                                    {{-- @error('password')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror --}}
+                                  
+                                </div>
                                 @error('password')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
                             </div>
-
+                            
+                        
                             <div class="transBox2">    
                                 <input type="password" name="password_confirmation" placeholder=""
                                     class="@error('password_confirmation') is-invalid @enderror" required autocomplete="new-password">

@@ -575,7 +575,7 @@
 /* LOGIN */
 
 .form-login-register input {
-
+    margin-bottom: 10px;
     margin-left: 10px;
     border: 0px solid transparent !important;
     background-color:rgba(150, 100, 200, .7);
