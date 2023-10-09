@@ -110,7 +110,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.25s">
-                    <p style="color: #fdfdfd">© Copyright 2022 SI PIMUS XII Committee.</p>
+                    <p style="color: #fdfdfd">© Copyright 2023 SI PIMUS XIII Committee.</p>
 
                     <!-- <br>Design: <a rel="nofollow" href="https://templatemo.com">TemplateMo</a></p> -->
                 </div>

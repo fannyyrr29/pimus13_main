@@ -8,8 +8,8 @@
     <section id="login" class="mb-5" style="margin-top: 150px">
         <div class="container">
             <div class="row text-center">
-                <div class="col-lg-4 col-md-12 col-12"></div>
-                <div class="col-lg-4 col-md-12 col-12">
+                <div class="col-lg-3 col-md-12 col-12"></div>
+                <div class="col-lg-6 col-md-12 col-12">
                     <img src="{{ url('/assets/images/logo/logo-pimus-text.png') }}" alt="PIMUS XI" class="mb-4">
                     <form method="POST" action="{{ route('login') }}" class="form-login-register">
                         @csrf
@@ -46,7 +46,7 @@
                         </p>
                     </form>
                 </div>
-                <div class="col-lg-4 col-md-12 col-12"></div>
+                <div class="col-lg-3 col-md-12 col-12"></div>
             </div>
         </div>
     </section>
