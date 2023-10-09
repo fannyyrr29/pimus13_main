@@ -30,7 +30,7 @@
                 </div>
             </div>
             <div class='row mb-3'>
-                <div class='col-lg-4 col-sm-6 mb-5'>
+                <div class='col-lg-3 col-sm-6 mb-5'>
                     <a href='/registration/cabang?cabang=1'>
                         <div class='item wow bounceInUp' data-wow-duration='1s' data-wow-delay='0.3s'>
                             <div class='hidden-content'>
@@ -44,7 +44,7 @@
                         </div>
                     </a>
                 </div>
-                <div class='col-lg-4 col-sm-6 mb-5'>
+                <div class='col-lg-3 col-sm-6 mb-5'>
                     <a href='/registration/cabang?cabang=2'>
                         <div class='item wow bounceInUp' data-wow-duration='1s' data-wow-delay='0.4s'>
                             <div class='hidden-content'>
@@ -58,7 +58,7 @@
                         </div>
                     </a>
                 </div>
-                <div class='col-lg-4 col-sm-6 mb-5'>
+                <div class='col-lg-3 col-sm-6 mb-5'>
                     <a href='/registration/cabang?cabang=3'>
                         <div class='item wow bounceInUp' data-wow-duration='1s' data-wow-delay='0.5s'>
                             <div class='hidden-content'>
@@ -88,7 +88,7 @@
                     </a>
                 </div> --}}
 
-                <div class='col-lg-4 col-sm-6 mb-5'>
+                <div class='col-lg-3 col-sm-6 mb-5'>
                     <a href='/registration/cabang?cabang=5'>
                         <div class='item wow bounceInUp' data-wow-duration='1s' data-wow-delay='0.5s'>
                             <div class='hidden-content'>
@@ -101,7 +101,7 @@
                         </div>
                     </a>
                 </div>
-                <div class='col-lg-4 col-sm-6 mb-5'>
+                <div class='col-lg-3 col-sm-6 mb-5'>
                     <a href='/registration/cabang?cabang=7'>
                         <div class='item wow bounceInUp' data-wow-duration='1s' data-wow-delay='0.5s'>
                             <div class='hidden-content'>
@@ -114,7 +114,7 @@
                         </div>
                     </a>
                 </div>
-                <div class='col-lg-4 col-sm-6 mb-5'>
+                <div class='col-lg-3 col-sm-6 mb-5'>
                     <a href='/registration/cabang?cabang=6'>
                         <div class='item wow bounceInUp' data-wow-duration='1s' data-wow-delay='0.4s'>
                             <div class='hidden-content'>
@@ -126,9 +126,9 @@
                                 <img src='/assets/images/logo-cabang/poster.png' alt=''>
                             </div>
                         </div>
-                    </a>    
+                    </a>
                 </div>
-                <div class='col-lg-4 col-sm-6 mb-5'>
+                <div class='col-lg-3 col-sm-6 mb-5'>
                     <a href='/registration/cabang?cabang=8'>
                         <div class='item wow bounceInUp' data-wow-duration='1s' data-wow-delay='0.5s'>
                             <div class='hidden-content'>
@@ -143,7 +143,7 @@
                         </div>
                     </a>
                 </div>
-                <div class='col-lg-4 col-sm-6 mb-5'>
+                <div class='col-lg-3 col-sm-6 mb-5'>
                     <a href='/registration/cabang?cabang=12'>
                         <div class='item wow bounceInUp' data-wow-duration='1s' data-wow-delay='0.5s'>
                             <div class='hidden-content'>
