@@ -39,7 +39,7 @@
                                 </p>
                             </div>
                             <div class='showed-content'>
-                                <img src='/assets/images/logo-cabang/pilmapres.png' alt=''>
+                                <img src='/assets/images/logo-cabang/Pilmapres.png' alt=''>
                             </div>
                         </div>
                     </a>
@@ -53,7 +53,7 @@
                                     Bahasa Inggris. </p>
                             </div>
                             <div class='showed-content'>
-                                <img src='/assets/images/logo-cabang/debat-inggris.png' alt=''>
+                                <img src='/assets/images/logo-cabang/Debat Inggris.png' alt=''>
                             </div>
                         </div>
                     </a>
@@ -68,7 +68,7 @@
                                 </p>
                             </div>
                             <div class='showed-content'>
-                                <img src='/assets/images/logo-cabang/debat-indo.png' alt=''>
+                                <img src='/assets/images/logo-cabang/Debat Indonesia.png' alt=''>
                             </div>
                         </div>
                     </a>
@@ -96,7 +96,7 @@
                                 <p>Kompetisi di bidang Matematika, Ilmu Pengetahuan Alam dan Statisik. </p>
                             </div>
                             <div class='showed-content'>
-                                <img src='/assets/images/logo-cabang/on-mipas.png' alt=''>
+                                <img src='/assets/images/logo-cabang/Kompetisi MIPAS.png' alt=''>
                             </div>
                         </div>
                     </a>
@@ -109,7 +109,7 @@
                                 <p>Kompetisi membuat suatu karya video pendidikan sesuai dengan tema yang ditentukan. </p>
                             </div>
                             <div class='showed-content'>
-                                <img src='/assets/images/logo-cabang/video.png' alt=''>
+                                <img src='/assets/images/logo-cabang/Video Digital Pendidikan.png' alt=''>
                             </div>
                         </div>
                     </a>
@@ -123,7 +123,7 @@
                                     ditentukan. </p>
                             </div>
                             <div class='showed-content'>
-                                <img src='/assets/images/logo-cabang/poster.png' alt=''>
+                                <img src='/assets/images/logo-cabang/Poster Digital Pendidikan.png' alt=''>
                             </div>
                         </div>
                     </a>
@@ -138,7 +138,7 @@
                                 </p>
                             </div>
                             <div class='showed-content'>
-                                <img src='/assets/images/logo-cabang/kreativitas-mahasiswa.png' alt=''>
+                                <img src='/assets/images/logo-cabang/PKM-Riset Sosial Humaniora.png' alt=''>
                             </div>
                         </div>
                     </a>
@@ -153,7 +153,7 @@
                                 </p>
                             </div>
                             <div class='showed-content'>
-                                <img src='/assets/images/logo-cabang/ide-bisnis.png' alt=''>
+                                <img src='/assets/images/logo-cabang/Ide Bisnis.png' alt=''>
                             </div>
                         </div>
                     </a>

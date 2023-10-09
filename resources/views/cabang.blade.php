@@ -29,7 +29,7 @@
 
                 echo '
                     <div class="image">
-                        <img src="/assets/images/icon cabang/'.$category->name.'.png" alt="Gambar '.$category->name.'">
+                        <img src="../assets/images/logo-cabang/'.$category->name.'.png" alt="Gambar '.$category->name.'">
                     </div>
                     <div class="info">
                         <h1 class="title text-lowercase">'.$category_name.'</h1>
