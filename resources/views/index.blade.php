@@ -25,15 +25,17 @@
                             <div class="left-content header-text wow fadeInLeft" data-wow-duration="1s" data-wow-delay="1s">
                                 <h6><img src="{{ url('assets/images/logo/logo-pimus-text.png') }}" alt=""> </h6>
                                 <div class="desc-background">
-                                    <p style="color: #fff; font-weight: bold;">XII-ATHLON: PREPARE FOR YOUR TRIUMPH</p>
+                                    <p style="color: #fff; font-weight: bold;">THE NEW GAME : DISCOVER POTENTIAL TO UNLOCK YOUR UNIVERSE</p>
                                     <p style="color: #fff;text-align:justify !important; text-justify:inter-word" font
-                                        size="1">Para <i>conqueror</i> yang telah berhasil memulihkan dunia dan
-                                        melihat <i>gate</i>
-                                        yang mengarahkan mereka ke Earth 2.0. Mereka harus meng-<i>unlock</i> area baru ini
-                                        menggunakan komponen. Setelah
-                                        semua di-<i>unlock</i>, mereka harus berpisah ke setiap <i>district</i> yang membuat
-                                        mereka dapat menduduki kedudukan
-                                        tertinggi di Earth 2.0, yaitu <b>Throne of Triumph.</b></h6>
+                                        size="1">Para <i>player</i> secara tiba-tiba masuk ke dalam dunia game, 
+                                        dimana game tersebut belum aktif.
+                                         Para <i>player</i> harus mengaktifkan game terlebih dahulu,
+                                          karena satu-satunya cara para <i>Player</i> dapat pulang ke
+                                           dunia asal adalah dengan menyelesaikan game tersebut.
+                                            Setelah game berhasil diaktifkan maka terbuka beberapa <i>Map</i>
+                                             berbeda, dimana para <i>Player</i> harus menyelesaikan <i>Map</i> untuk
+                                              dapat mengumpulkan komponen kunci yang menjadi jalan mereka
+                                               untuk kembali pulang ke dunia asal mereka.
                                 </div>
                             </div>
                         </div>
