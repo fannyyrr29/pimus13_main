@@ -150,10 +150,10 @@
                             menyaring
                             mahasiswa/i terbaik UBAYA
                             untuk menjadi perwakilan pada kompetisi nasional. Di tahun yang kesebelas ini, PIMUS
-                            memiliki 7
+                            memiliki 8
                             cabang lomba yang terdiri
-                            dari PKM 4 Bidang (PKM RSH, PKM K, PKM PM, PKM KC), Karya Tulis Ilmiah, Pemilihan Mahasiswa
-                            Berprestasi, Video Digital Pendidikan,
+                            dari PKM 4 Bidang (PKM RSH, PKM K, PKM PM, PKM KC), Pemilihan Mahasiswa
+                            Berprestasi, Video Digital Pendidikan, Ide Bisnis, Poster Digital Pendidikan,
                             Kompetisi MIPAS, Debat Bahasa Inggris, dan Debat Bahasa Indonesia. Yuk daftarkan dirimu
                             sekarang, dapatkan pengalaman berharga, kesempatan menjadi
                             perwakilan UBAYA, dan total hadiah puluhan juta rupiah!</p>
@@ -171,7 +171,7 @@
         <div class="mt-3 desc-background w-50 text-center ">
             <h1 style="color: #ffffff; text-align: center; font-family: archieve, Montserrat, sans-serif;"
                 data-aos="zoom-in">
-                timeline pimus xii</h1>
+                timeline pimus xiii</h1>
         </div>
     </div>
     <link rel="stylesheet" href="{{ url('/assets/css/timeline.css') }}">
@@ -198,7 +198,7 @@
                 </li>
                 <li>
                     <div class="timeline-content">
-                        <h3 style="color: #ffffff" class="date">24 November 2023</h3>
+                        <h3 style="color: #ffffff" class="date">15   November 2023</h3>
                         <h1>Pengumpulan Proposal untuk di Revisi (PKM, KTI, dan Pilmapres)</h1>
                     </div>
                 </li>
@@ -221,7 +221,7 @@
                 <li>
                     <div class="timeline-content">
                         <h3 style="color: #ffffff" class="date">27 November-1 Desember 2023</h3>
-                        <h1>Acara Perlombaan PIMUS XII</h1>
+                        <h1>Acara Perlombaan PIMUS XIII</h1>
                     </div>
                 </li>
             </ul>

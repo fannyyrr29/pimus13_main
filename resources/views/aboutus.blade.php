@@ -124,7 +124,8 @@
                         <div class="row">
                             <div class="col-lg-6">
                                 <fieldset>
-                                    <input type="name" name="name" id="name" placeholder="Name" autocomplete="on" required>
+                                    <input type="name" name="name" id="name" placeholder="Name" autocomplete="on"
+                                        required>
                                 </fieldset>
                             </div>
                             <div class="col-lg-6">
@@ -141,8 +142,7 @@
                             </div>
                             <div class="col-lg-12">
                                 <fieldset>
-                                    <textarea name="message" type="text" class="form-control" id="message"
-                                        placeholder="Message" required=""></textarea>
+                                    <textarea name="message" type="text" class="form-control" id="message" placeholder="Message" required=""></textarea>
                                 </fieldset>
                             </div>
                             <div class="col-lg-12">
@@ -157,7 +157,7 @@
                 <div class="phone-info col-lg-6 wow fadeInLeft">
                     <h4 style="color: #ffffff">Contact Us</h4>
                     <h2 style="color: #ffffff"><a style="color: #ffffff" href="https://www.instagram.com/pimus12/"
-                            TARGET="_blank"><i class="bi bi-instagram"></i> Pimus12 </a></span></h2>
+                            TARGET="_blank"><i class="bi bi-instagram"></i> pimus13 </a></span></h2>
                 </div>
             </div>
         </div>
