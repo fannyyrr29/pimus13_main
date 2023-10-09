@@ -198,13 +198,13 @@
                 </li>
                 <li>
                     <div class="timeline-content">
-                        <h3 style="color: #ffffff" class="date">27 November-1 Desember 2023</h3>
+                        <h3 style="color: #ffffff" class="date">24 November 2023</h3>
                         <h1>Pengumpulan Proposal untuk di Revisi (PKM, KTI, dan Pilmapres)</h1>
                     </div>
                 </li>
                 <li>
                     <div class="timeline-content">
-                        <h3 style="color: #ffffff" class="date">2 Desember 2022</h3>
+                        <h3 style="color: #ffffff" class="date">24 November 2023</h3>
                         <h1>Pengumpulan Final Proposal (PKM, KTI, dan Pilmapres)</h1>
                     </div>
                 </li>
@@ -220,7 +220,7 @@
                 --}}
                 <li>
                     <div class="timeline-content">
-                        <h3 style="color: #ffffff" class="date">5-9 Desember 2022</h3>
+                        <h3 style="color: #ffffff" class="date">27 November-1 Desember 2023</h3>
                         <h1>Acara Perlombaan PIMUS XII</h1>
                     </div>
                 </li>

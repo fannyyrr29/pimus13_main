@@ -10,7 +10,7 @@
                     <a class="nav-link{{ request()->is('admin') ? ' active' : '' }}" aria-current="page" href="{{ route('admin.index') }}">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link{{ request()->is('admin/accounts') ? ' active' : '' }}" aria-current="page" href="{{ route('admin.accounts') }}">Accounts</a>
+                    <a class="nav-link{{ request()->is('admin/accounts') ? ' active' : '' }} " aria-current="page" href="{{ route('admin.accounts') }}">Accounts</a>
                 </li>
                 <li class="nav-item">   
                     <a class="nav-link{{ request()->is('admin/groups') ? ' active' : '' }}" aria-current="page" href="{{ route('admin.groups') }}">Groups</a>

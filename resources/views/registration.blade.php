@@ -126,7 +126,7 @@
                                 <img src='/assets/images/logo-cabang/poster.png' alt=''>
                             </div>
                         </div>
-                    </a>
+                    </a>    
                 </div>
                 <div class='col-lg-4 col-sm-6 mb-5'>
                     <a href='/registration/cabang?cabang=8'>

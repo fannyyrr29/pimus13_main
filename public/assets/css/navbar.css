@@ -1,5 +1,5 @@
 .navbar {
-    background-color: #312f60 !important;
+    background-color: #3b2583 !important;
 }
 .navbar li a {
     font-weight: bold;
@@ -17,15 +17,20 @@
     text-align: center;
     text-decoration: none;
     border-radius: 50px;
-    background-color: #25244b;
+    background-color: #ea2927;
     border: 1px solid #fff;
     box-shadow: 1px 1px 1px #fff;
-
+    font-family: 'pixels';
+    letter-spacing: 2px;
+    font-size: 1rem;
     color: #ffffff !important;
     transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
         border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 
+.nav-item > a{
+    font-family: archieve;
+}
 .navbar .btnLogin:hover {
     background-color: #5a5b8a;
     color: #faba8e !important;
