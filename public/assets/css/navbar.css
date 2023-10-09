@@ -17,12 +17,12 @@
     text-align: center;
     text-decoration: none;
     border-radius: 50px;
-    background-color: #ea2927;
     border: 1px solid #fff;
     box-shadow: 1px 1px 1px #fff;
     font-family: 'pixels';
     letter-spacing: 2px;
     font-size: 1rem;
+    background-color: #ea2927;
     color: #ffffff !important;
     transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
         border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
