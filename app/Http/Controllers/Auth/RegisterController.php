@@ -92,6 +92,7 @@ class RegisterController extends Controller
         $user->vote_tickets = 3;
         $user->role = "Umum";
         $user->save();
+        event(new Registered($user));
 
         if($user != null){
             return redirect()->back()->with(session()->flash('alert-success', 'Your account has been created. Please login for verification link.'));
