@@ -31,7 +31,7 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top shadow">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top shadow">
         <div class="container">
             <a class="navbar-brand" href="{{ url('/') }}">
                 <img src="{{ url('assets/images/logo/logo-ubaya.png') }}" alt="Logo Ubaya"
@@ -40,8 +40,8 @@
                     style="height: 70px; width: 70px;  ">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" style="">
+                <span class="navbar-toggler-icon" style=""></span>
             </button>
 
             <div class="collapse navbar-collapse" id="navbarNav">
