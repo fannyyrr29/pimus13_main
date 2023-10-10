@@ -9,6 +9,17 @@
 .form-login-register{
     color: #fff !important;
 }
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
 @media screen and (min-width:576px){
     .form-regis-hp{
         display: none;
@@ -101,7 +112,7 @@
                                             <p class="colorText">NRP: </p>
                                         </td>
                                         <td>
-                                            <input type="text" id="nrp" name="nrp" placeholder="" class="@error('nrp') is-invalid @enderror" maxlength="9" required>
+                                            <input type="number" id="nrp" min='100000000' max='999999999' name="nrp" placeholder="" class="@error('nrp') is-invalid @enderror" maxlength="9" required>
                                         </td>
                                         @error('nrp')
                                             <span class="invalid-feedback" role="alert">
