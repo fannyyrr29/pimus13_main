@@ -83,21 +83,24 @@ class RegisterController extends Controller
             'nrp.min' => "NRP must have 9 characters",
             'nrp.max' => "NRP must have 9 characters",
         ]);
-        
-        $user = new User();
-        $user->nrp = $request->nrp;
-        $user->name = $request->nama;
-        $user->email = "s".$request->nrp."@student.ubaya.ac.id";
-        $user->password = Hash::make($request->password);
-        $user->vote_tickets = 3;
-        $user->role = "Umum";
-        $user->save();
-        event(new Registered($user));
 
-        if($user != null){
-            return redirect()->back()->with(session()->flash('alert-success', 'Your account has been created. Please login for verification link.'));
+        try {
+            $user = new User();
+            $user->nrp = $request->nrp;
+            $user->name = $request->nama;
+            $user->email = "s".$request->nrp."@student.ubaya.ac.id";
+            $user->password = Hash::make($request->password);
+            $user->vote_tickets = 3;
+            $user->role = "Umum";
+            event(new Registered($user));
+            $user->save();
+            
+            if($user != null){
+                return redirect()->back()->with(session()->flash('alert-success', 'Your account has been created. Please login for verification link.'));
+            }
+        } catch (\Throwable $th) {
+            return redirect()->back()->with(session()->flash('alert-danger', 'Something went wrong!'));
         }
-
-        return redirect()->back()->with(session()->flash('alert-danger', 'Something went wrong!'));
+        
     }
 }
