@@ -89,12 +89,12 @@
                 <h5>Apakah boleh mengikuti lebih dari 1 cabang PIMUS?</h5>
             </div>
             <div class="panel">
-                <p>boleh, namun peserta tidak dapat menjadi ketua di 2 cabang lomba yang berbeda.</p>
+                <p>Boleh, namun peserta tidak dapat menjadi ketua di 2 cabang lomba yang berbeda.</p>
             </div>
 
             <div class="accordion-faq">
                 <div class="icon"></div>
-                <h5>Apa benefit yang didapatkan ketika mengikuti PIMUS?</h5>
+                <h5>Apa <i>benefit</i> yang didapatkan ketika mengikuti PIMUS?</h5>
             </div>
             <div class="panel">
                 <p>Kalian bisa mendapat pengalaman, berkesempatan menjadi perwakilan Universitas Surabaya di ajang
