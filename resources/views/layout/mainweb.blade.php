@@ -59,17 +59,17 @@
                     {{-- <li class="nav-item">
                         <a class="nav-link nav-center" href="{{ url('/submission') }}">Submission</a>
                     </li> --}}
-                    {{-- <li class="nav-item nav-center dropdown">
+                    <li class="nav-item nav-center dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
                             aria-haspopup="true" aria-expanded="false">
                             Exhibition
                         </a>
                         <div class="dropdown-menu nav-center" aria-labelledby="navbarDropdownMenuLink">
-                            <a class="dropdown-item" href="{{ route('exhibition',4) }}">KTI</a>
+                            {{-- <a class="dropdown-item" href="{{ route('exhibition',4) }}">KTI</a> --}}
 
                             <a class="dropdown-item" href="{{ route('exhibition',7) }}">Video Digital Pendidikan</a>
                         </div>
-                    </li> --}}
+                    </li>
                     @endif
                     @guest
                     <li class="nav-item nav-center">
