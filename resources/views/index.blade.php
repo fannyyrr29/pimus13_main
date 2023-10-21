@@ -25,17 +25,18 @@
                             <div class="left-content header-text wow fadeInLeft" data-wow-duration="1s" data-wow-delay="1s">
                                 <h6><img src="{{ url('assets/images/logo/logo-pimus-text.png') }}" alt=""> </h6>
                                 <div class="desc-background">
-                                    <p style="color: #fff; font-weight: bold;">THE NEW GAME : DISCOVER POTENTIAL TO UNLOCK YOUR UNIVERSE</p>
+                                    <p style="color: #fff; font-weight: bold;">THE NEW GAME : DISCOVER POTENTIAL TO UNLOCK
+                                        YOUR UNIVERSE</p>
                                     <p style="color: #fff;text-align:justify !important; text-justify:inter-word" font
-                                        size="1">Para <i>player</i> secara tiba-tiba masuk ke dalam dunia game, 
+                                        size="1">Para <i>player</i> secara tiba-tiba masuk ke dalam dunia game,
                                         dimana game tersebut belum aktif.
-                                         Para <i>player</i> harus mengaktifkan game terlebih dahulu,
-                                          karena satu-satunya cara para <i>Player</i> dapat pulang ke
-                                           dunia asal adalah dengan menyelesaikan game tersebut.
-                                            Setelah game berhasil diaktifkan maka terbuka beberapa <i>Map</i>
-                                             berbeda, dimana para <i>Player</i> harus menyelesaikan <i>Map</i> untuk
-                                              dapat mengumpulkan komponen kunci yang menjadi jalan mereka
-                                               untuk kembali pulang ke dunia asal mereka.
+                                        Para <i>player</i> harus mengaktifkan game terlebih dahulu,
+                                        karena satu-satunya cara para <i>Player</i> dapat pulang ke
+                                        dunia asal adalah dengan menyelesaikan game tersebut.
+                                        Setelah game berhasil diaktifkan maka terbuka beberapa <i>Map</i>
+                                        berbeda, dimana para <i>Player</i> harus menyelesaikan <i>Map</i> untuk
+                                        dapat mengumpulkan komponen kunci yang menjadi jalan mereka
+                                        untuk kembali pulang ke dunia asal mereka.
                                 </div>
                             </div>
                         </div>
@@ -195,19 +196,19 @@
                 <li>
                     <div class="timeline-content">
                         <h3 style="color: #ffffff" class="date">10-11 November 2023</h3>
-                        <h1>Klinik PKM, PILMAPRES, Video Digital Pendidikan, KTI</h1>
+                        <h1>Klinik PKM, PILMAPRES, dan Video Digital Pendidikan</h1>
                     </div>
                 </li>
                 <li>
                     <div class="timeline-content">
                         <h3 style="color: #ffffff" class="date">15 November 2023</h3>
-                        <h1>Pengumpulan Proposal untuk di Revisi (PKM, KTI, dan Pilmapres)</h1>
+                        <h1>Pengumpulan Proposal untuk di Revisi (PKM dan Pilmapres)</h1>
                     </div>
                 </li>
                 <li>
                     <div class="timeline-content">
                         <h3 style="color: #ffffff" class="date">24 November 2023</h3>
-                        <h1>Pengumpulan Final Proposal (PKM, KTI, dan Pilmapres)</h1>
+                        <h1>Pengumpulan Final Proposal (PKM dan Pilmapres)</h1>
                     </div>
                 </li>
                 {{--

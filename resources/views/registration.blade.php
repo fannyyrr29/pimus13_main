@@ -92,7 +92,7 @@
                     <a href='/registration/cabang?cabang=5'>
                         <div class='item wow bounceInUp' data-wow-duration='1s' data-wow-delay='0.5s'>
                             <div class='hidden-content'>
-                                <h4>ON-MIPAS</h4>
+                                <h4>K-MIPAS</h4>
                                 <p>Kompetisi di bidang Matematika, Ilmu Pengetahuan Alam dan Statisik. </p>
                             </div>
                             <div class='showed-content'>
@@ -138,7 +138,7 @@
                                 </p>
                             </div>
                             <div class='showed-content'>
-                                <img src='/assets/images/logo-cabang/PKM-Riset Sosial Humaniora.png' alt=''>
+                                <img src='/assets/images/logo-cabang/PKM-Riset Sosial Humaniora.png' alt=''
                             </div>
                         </div>
                     </a>
