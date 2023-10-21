@@ -11,8 +11,14 @@
                 <form action="/registration/cabang/upload" method="POST" enctype="multipart/form-data" class="form-register">
                     @csrf
                     <div id="awal" style="visibility: visible; display: block;">
-                        <div style="text-align: center;">
+                        <div style="text-align: center;" class="mb-5">
                             <h1 class="text-lowercase">form registrasi {{ $category->name }}</h1>
+                            <button class='btn-mekanisme' data-bs-toggle='modal' data-bs-target='#mekanisme'>Mekanisme
+                                Pendaftaran</button>
+                            <p style="color: #ffde40 "> *) Surat pernyataan terdapat dalam setiap pedoman cabang lomba,
+                                silahkan
+                                klik mekanisme
+                                pendaftaran untuk informasi lebih lanjut.</p>
                         </div>
                         <input type="text" id="cabang" value="{{ $category->id }}" name="idLomba" readonly hidden>
                         @if ($team != null)
@@ -50,202 +56,197 @@
                         <?php
                         $id = $category->id;
                         if ($id != 1 && $id != 5 && $id != 2 && $id != 3) {
-                            if ($id == 6){
+                            if ($id == 6) {
                                 echo '
-                                    <input type="text" id="nrpKetua" pattern="[0-9]{9}" onchange="nrp();" title="NRP UBAYA" placeholder="NRP Ketua Kelompok" maxlength="9" required><br>
-
-                                    <input type="text" name="line" placeholder="ID Line Ketua Kelompok" required><br>
-                                    <input type="text" name="wa" placeholder="Nomor WhatsApp Ketua Kelompok" required><br>
-
-                                    <label>Form Pendaftaran (.pdf)</label><br>
-                                    <input type="file" name="formDaftar" class="inputLomba" accept=".pdf" required><br>
-                                    <label class="label-keterangan">*) format nama file: Nama_NRP</label><br>
-                                    
-                                    <label>Surat Pernyataan Kesediaan Mewakili Ubaya (.pdf)</label><br>
-                                    <input type="file" name="suratPernyataan" class="inputLomba" accept=".pdf" required><br>
-                                    <label class="label-keterangan">*) wajib diprint, diberi materai Rp 10.000,00, diberi tandatangan basah mengenai materai Rp10.000,00<br>
-                                    format nama file: Surat Pernyataan_Nama_NRP</label><br>
-
-                                    <label>Jumlah Anggota Kelompok</label><br>
-                                    <input type="radio" id="jumlahAnggota3" name="jumlahAnggota" value="2" onclick="displayForm(this.value);" checked required>
-                                    <label for="jumlahAnggota3">2</label>&nbsp;&nbsp;&nbsp;
-                                    <input type="radio" id="jumlahAnggota3" name="jumlahAnggota" value="3" onclick="displayForm(this.value);" required>
-                                    <label for="jumlahAnggota3">3</label>&nbsp;&nbsp;&nbsp;
-                                    <input type="radio" id="jumlahAnggota4" name="jumlahAnggota" value="4" onclick="displayForm(this.value);" required>
-                                    <label for="jumlahAnggota4">4</label>&nbsp;&nbsp;&nbsp;
-                                    <label class="label-keterangan">*) termasuk ketua kelompok</label><br>
-                                    ';
-                            }
-                            else if ($id != 7){
+                                                                                                                                                                                                                                                                                                                                                            <input type="text" id="nrpKetua" pattern="[0-9]{9}" onchange="nrp();" title="NRP UBAYA" placeholder="NRP Ketua Kelompok" maxlength="9" required><br>
+                                                                                                                                                                                                                                                                                                                        
+                                                                                                                                                                                                                                                                                                                                                            <input type="text" name="line" placeholder="ID Line Ketua Kelompok" required><br>
+                                                                                                                                                                                                                                                                                                                                                            <input type="text" name="wa" placeholder="Nomor WhatsApp Ketua Kelompok" required><br>
+                                                                                                                                                                                                                                                                                                                        
+                                                                                                                                                                                                                                                                                                                                                            <label>Form Pendaftaran (.pdf)</label><br>
+                                                                                                                                                                                                                                                                                                                                                            <input type="file" name="formDaftar" class="inputLomba" accept=".pdf" required><br>
+                                                                                                                                                                                                                                                                                                                                                            <label class="label-keterangan">*) format nama file: Nama_NRP</label><br>
+                                                                                                                                                                                                                                                                                                                                                            
+                                                                                                                                                                                                                                                                                                                                                            <label>Surat Pernyataan Kesediaan Mewakili Ubaya (.pdf)</label><br>
+                                                                                                                                                                                                                                                                                                                                                            <input type="file" name="suratPernyataan" class="inputLomba" accept=".pdf" required><br>
+                                                                                                                                                                                                                                                                                                                                                            <label class="label-keterangan">*) wajib diprint, diberi materai Rp 10.000,00, diberi tandatangan basah mengenai materai Rp10.000,00<br>
+                                                                                                                                                                                                                                                                                                                                                            format nama file: Surat Pernyataan_Nama_NRP</label><br>
+                                                                                                                                                                                                                                                                                                                        
+                                                                                                                                                                                                                                                                                                                                                            <label>Jumlah Anggota Kelompok</label><br>
+                                                                                                                                                                                                                                                                                                                                                            <input type="radio" id="jumlahAnggota3" name="jumlahAnggota" value="2" onclick="displayForm(this.value);" checked required>
+                                                                                                                                                                                                                                                                                                                                                            <label for="jumlahAnggota3">2</label>&nbsp;&nbsp;&nbsp;
+                                                                                                                                                                                                                                                                                                                                                            <input type="radio" id="jumlahAnggota3" name="jumlahAnggota" value="3" onclick="displayForm(this.value);" required>
+                                                                                                                                                                                                                                                                                                                                                            <label for="jumlahAnggota3">3</label>&nbsp;&nbsp;&nbsp;
+                                                                                                                                                                                                                                                                                                                                                            <input type="radio" id="jumlahAnggota4" name="jumlahAnggota" value="4" onclick="displayForm(this.value);" required>
+                                                                                                                                                                                                                                                                                                                                                            <label for="jumlahAnggota4">4</label>&nbsp;&nbsp;&nbsp;
+                                                                                                                                                                                                                                                                                                                                                            <label class="label-keterangan">*) termasuk ketua kelompok</label><br>
+                                                                                                                                                                                                                                                                                                                                                            ';
+                            } elseif ($id != 7) {
                                 echo '
-                                    <input type="text" id="nrpKetua" pattern="[0-9]{9}" onchange="nrp();" title="NRP UBAYA" placeholder="NRP Ketua Kelompok" maxlength="9" required><br>
-
-                                    <input type="text" name="line" placeholder="ID Line Ketua Kelompok" required><br>
-                                    <input type="text" name="wa" placeholder="Nomor WhatsApp Ketua Kelompok" required><br>
-
-                                    <label>Form Pendaftaran (.pdf)</label><br>
-                                    <input type="file" name="formDaftar" class="inputLomba" accept=".pdf" required><br>
-                                    <label class="label-keterangan">*) format nama file: Nama_NRP</label><br>
-                                    
-                                    <label>Surat Pernyataan Kesediaan Mewakili Ubaya (.pdf)</label><br>
-                                    <input type="file" name="suratPernyataan" class="inputLomba" accept=".pdf" required><br>
-                                    <label class="label-keterangan">*) wajib diprint, diberi materai Rp 10.000,00, diberi tandatangan basah mengenai materai Rp10.000,00<br>
-                                    format nama file: Surat Pernyataan_Nama_NRP</label><br>
-
-                                    <label>Jumlah Anggota Kelompok</label><br>
-                                    <input type="radio" id="jumlahAnggota3" name="jumlahAnggota" value="3" onclick="displayForm(this.value);" checked required>
-                                    <label for="jumlahAnggota3">3</label>&nbsp;&nbsp;&nbsp;
-                                    <input type="radio" id="jumlahAnggota4" name="jumlahAnggota" value="4" onclick="displayForm(this.value);" required>
-                                    <label for="jumlahAnggota4">4</label>&nbsp;&nbsp;&nbsp;
-                                    <input type="radio" id="jumlahAnggota5" name="jumlahAnggota" value="5" onclick="displayForm(this.value);" required>
-                                    <label for="jumlahAnggota5">5</label><br>
-                                    <label class="label-keterangan">*) termasuk ketua kelompok</label><br>
-                                    ';
+                                                                                                                                                                                                                                                                                                                                                            <input type="text" id="nrpKetua" pattern="[0-9]{9}" onchange="nrp();" title="NRP UBAYA" placeholder="NRP Ketua Kelompok" maxlength="9" required><br>
+                                                                                                                                                                                                                                                                                                                        
+                                                                                                                                                                                                                                                                                                                                                            <input type="text" name="line" placeholder="ID Line Ketua Kelompok" required><br>
+                                                                                                                                                                                                                                                                                                                                                            <input type="text" name="wa" placeholder="Nomor WhatsApp Ketua Kelompok" required><br>
+                                                                                                                                                                                                                                                                                                                        
+                                                                                                                                                                                                                                                                                                                                                            <label>Form Pendaftaran (.pdf)</label><br>
+                                                                                                                                                                                                                                                                                                                                                            <input type="file" name="formDaftar" class="inputLomba" accept=".pdf" required><br>
+                                                                                                                                                                                                                                                                                                                                                            <label class="label-keterangan">*) format nama file: Nama_NRP</label><br>
+                                                                                                                                                                                                                                                                                                                                                            
+                                                                                                                                                                                                                                                                                                                                                            <label>Surat Pernyataan Kesediaan Mewakili Ubaya (.pdf)</label><br>
+                                                                                                                                                                                                                                                                                                                                                            <input type="file" name="suratPernyataan" class="inputLomba" accept=".pdf" required><br>
+                                                                                                                                                                                                                                                                                                                                                            <label class="label-keterangan">*) wajib diprint, diberi materai Rp 10.000,00, diberi tandatangan basah mengenai materai Rp10.000,00<br>
+                                                                                                                                                                                                                                                                                                                                                            format nama file: Surat Pernyataan_Nama_NRP</label><br>
+                                                                                                                                                                                                                                                                                                                        
+                                                                                                                                                                                                                                                                                                                                                            <label>Jumlah Anggota Kelompok</label><br>
+                                                                                                                                                                                                                                                                                                                                                            <input type="radio" id="jumlahAnggota3" name="jumlahAnggota" value="3" onclick="displayForm(this.value);" checked required>
+                                                                                                                                                                                                                                                                                                                                                            <label for="jumlahAnggota3">3</label>&nbsp;&nbsp;&nbsp;
+                                                                                                                                                                                                                                                                                                                                                            <input type="radio" id="jumlahAnggota4" name="jumlahAnggota" value="4" onclick="displayForm(this.value);" required>
+                                                                                                                                                                                                                                                                                                                                                            <label for="jumlahAnggota4">4</label>&nbsp;&nbsp;&nbsp;
+                                                                                                                                                                                                                                                                                                                                                            <input type="radio" id="jumlahAnggota5" name="jumlahAnggota" value="5" onclick="displayForm(this.value);" required>
+                                                                                                                                                                                                                                                                                                                                                            <label for="jumlahAnggota5">5</label><br>
+                                                                                                                                                                                                                                                                                                                                                            <label class="label-keterangan">*) termasuk ketua kelompok</label><br>
+                                                                                                                                                                                                                                                                                                                                                            ';
+                            } else {
+                                echo '
+                                                                                                                                                                                                                                                                                                                                                            <input type="text" id="nrpKetua" pattern="[0-9]{9}" onchange="nrp();" title="NRP UBAYA" placeholder="NRP Ketua Kelompok" maxlength="9" required><br>
+                                                                                                                                                                                                                                                                                                                        
+                                                                                                                                                                                                                                                                                                                                                            <input type="text" name="line" placeholder="ID Line Ketua Kelompok" required><br>
+                                                                                                                                                                                                                                                                                                                                                            <input type="text" name="wa" placeholder="Nomor WhatsApp Ketua Kelompok" required><br>
+                                                                                                                                                                                                                                                                                                                        
+                                                                                                                                                                                                                                                                                                                                                            <label>Form Pendaftaran (.pdf)</label><br>
+                                                                                                                                                                                                                                                                                                                                                            <input type="file" name="formDaftar" class="inputLomba" accept=".pdf" required><br>
+                                                                                                                                                                                                                                                                                                                                                            <label class="label-keterangan">*) format nama file: Nama_NRP</label><br>
+                                                                                                                                                                                                                                                                                                                                                            
+                                                                                                                                                                                                                                                                                                                                                            <label>Surat Pernyataan Kesediaan Mewakili Ubaya (.pdf)</label><br>
+                                                                                                                                                                                                                                                                                                                                                            <input type="file" name="suratPernyataan" class="inputLomba" accept=".pdf" required><br>
+                                                                                                                                                                                                                                                                                                                                                            <label class="label-keterangan">*) wajib diprint, diberi materai Rp 10.000,00, diberi tandatangan basah mengenai materai Rp10.000,00<br>
+                                                                                                                                                                                                                                                                                                                                                            format nama file: Surat Pernyataan_Nama_NRP</label><br>
+                                                                                                                                                                                                                                                                                                                        
+                                                                                                                                                                                                                                                                                                                                                            <label>Jumlah Anggota Kelompok</label><br>
+                                                                                                                                                                                                                                                                                                                                                            <input type="radio" id="jumlahAnggota3" name="jumlahAnggota" value="3" onclick="displayForm(this.value);" checked required>
+                                                                                                                                                                                                                                                                                                                                                            <label for="jumlahAnggota3">3</label>&nbsp;&nbsp;&nbsp;
+                                                                                                                                                                                                                                                                                                                                                            <input type="radio" id="jumlahAnggota4" name="jumlahAnggota" value="4" onclick="displayForm(this.value);" required>
+                                                                                                                                                                                                                                                                                                                                                            <label for="jumlahAnggota4">4</label>&nbsp;&nbsp;&nbsp;<br>
+                                                                                                                                                                                                                                                                                                                                                            <label class="label-keterangan">*) termasuk ketua kelompok</label><br>
+                                                                                                                                                                                                                                                                                                                                                            ';
                             }
-                            else{
+                        } elseif ($id == 2 || $id == 3) {
                             echo '
-                                    <input type="text" id="nrpKetua" pattern="[0-9]{9}" onchange="nrp();" title="NRP UBAYA" placeholder="NRP Ketua Kelompok" maxlength="9" required><br>
-
-                                    <input type="text" name="line" placeholder="ID Line Ketua Kelompok" required><br>
-                                    <input type="text" name="wa" placeholder="Nomor WhatsApp Ketua Kelompok" required><br>
-
-                                    <label>Form Pendaftaran (.pdf)</label><br>
-                                    <input type="file" name="formDaftar" class="inputLomba" accept=".pdf" required><br>
-                                    <label class="label-keterangan">*) format nama file: Nama_NRP</label><br>
-                                    
-                                    <label>Surat Pernyataan Kesediaan Mewakili Ubaya (.pdf)</label><br>
-                                    <input type="file" name="suratPernyataan" class="inputLomba" accept=".pdf" required><br>
-                                    <label class="label-keterangan">*) wajib diprint, diberi materai Rp 10.000,00, diberi tandatangan basah mengenai materai Rp10.000,00<br>
-                                    format nama file: Surat Pernyataan_Nama_NRP</label><br>
-
-                                    <label>Jumlah Anggota Kelompok</label><br>
-                                    <input type="radio" id="jumlahAnggota3" name="jumlahAnggota" value="3" onclick="displayForm(this.value);" checked required>
-                                    <label for="jumlahAnggota3">3</label>&nbsp;&nbsp;&nbsp;
-                                    <input type="radio" id="jumlahAnggota4" name="jumlahAnggota" value="4" onclick="displayForm(this.value);" required>
-                                    <label for="jumlahAnggota4">4</label>&nbsp;&nbsp;&nbsp;<br>
-                                    <label class="label-keterangan">*) termasuk ketua kelompok</label><br>
-                                    ';
-                                    }
-                        } 
-                        else if($id == 2 || $id == 3){
+                                                                                                                                                                                                                                                                                                                                                            <input type="text" id="nrpKetua" pattern="[0-9]{9}" onchange="nrp();" title="NRP UBAYA" placeholder="NRP Ketua Kelompok" maxlength="9" required><br>
+                                                                                                                                                                                                                                                                                                                        
+                                                                                                                                                                                                                                                                                                                                                            <input type="text" name="line" placeholder="ID Line Ketua Kelompok" required><br>
+                                                                                                                                                                                                                                                                                                                                                            <input type="text" name="wa" placeholder="Nomor WhatsApp Ketua Kelompok" required><br>
+                                                                                                                                                                                                                                                                                                                        
+                                                                                                                                                                                                                                                                                                                                                            <label>Form Pendaftaran (.pdf)</label><br>
+                                                                                                                                                                                                                                                                                                                                                            <input type="file" name="formDaftar" class="inputLomba" accept=".pdf" required><br>
+                                                                                                                                                                                                                                                                                                                                                            <label class="label-keterangan">*) format nama file: Nama_NRP</label><br>
+                                                                                                                                                                                                                                                                                                                        
+                                                                                                                                                                                                                                                                                                                                                            <label>Surat Pernyataan Kesediaan Mewakili Ubaya (.pdf)</label><br>
+                                                                                                                                                                                                                                                                                                                                                            <input type="file" name="suratPernyataan" class="inputLomba" accept=".pdf" required><br>
+                                                                                                                                                                                                                                                                                                                                                            <label class="label-keterangan">*) wajib diprint, diberi materai Rp 10.000,00, diberi tandatangan basah mengenai materai Rp10.000,00<br>
+                                                                                                                                                                                                                                                                                                                                                            format nama file: Surat Pernyataan_Nama_NRP</label><br>
+                                                                                                                                                                                                                                                                                                                        
+                                                                                                                                                                                                                                                                                                                                                            <label>Jumlah Anggota Kelompok</label><br>
+                                                                                                                                                                                                                                                                                                                                                            <input type="radio" id="jumlahAnggota2" name="jumlahAnggota" value="2" onclick="displayForm(this.value);" checked required>
+                                                                                                                                                                                                                                                                                                                                                            <label for="jumlahAnggota2">2</label>&nbsp;&nbsp;&nbsp;
+                                                                                                                                                                                                                                                                                                                                                            <label class="label-keterangan">*) termasuk ketua kelompok</label><br>
+                                                                                                                                                                                                                                                                                                                                                            ';
+                        } else {
                             echo '
-                                    <input type="text" id="nrpKetua" pattern="[0-9]{9}" onchange="nrp();" title="NRP UBAYA" placeholder="NRP Ketua Kelompok" maxlength="9" required><br>
-
-                                    <input type="text" name="line" placeholder="ID Line Ketua Kelompok" required><br>
-                                    <input type="text" name="wa" placeholder="Nomor WhatsApp Ketua Kelompok" required><br>
-
-                                    <label>Form Pendaftaran (.pdf)</label><br>
-                                    <input type="file" name="formDaftar" class="inputLomba" accept=".pdf" required><br>
-                                    <label class="label-keterangan">*) format nama file: Nama_NRP</label><br>
-
-                                    <label>Surat Pernyataan Kesediaan Mewakili Ubaya (.pdf)</label><br>
-                                    <input type="file" name="suratPernyataan" class="inputLomba" accept=".pdf" required><br>
-                                    <label class="label-keterangan">*) wajib diprint, diberi materai Rp 10.000,00, diberi tandatangan basah mengenai materai Rp10.000,00<br>
-                                    format nama file: Surat Pernyataan_Nama_NRP</label><br>
-
-                                    <label>Jumlah Anggota Kelompok</label><br>
-                                    <input type="radio" id="jumlahAnggota2" name="jumlahAnggota" value="2" onclick="displayForm(this.value);" checked required>
-                                    <label for="jumlahAnggota2">2</label>&nbsp;&nbsp;&nbsp;
-                                    <label class="label-keterangan">*) termasuk ketua kelompok</label><br>
-                                    ';
+                                                                                                                                                                                                                                                                                                                                                            <input type="number" name="jumlahAnggota" value=1 hidden readonly>
+                                                                                                                                                                                                                                                                                                                        
+                                                                                                                                                                                                                                                                                                                                                            <input type="text" pattern="[0-9]{9}" name="nrpAnggota[]" title="NRP UBAYA" placeholder="NRP" maxlength="9" required><br>
+                                                                                                                                                                                                                                                                                                                        
+                                                                                                                                                                                                                                                                                                                                                            <input type="text" name="line" placeholder="ID Line" required><br>
+                                                                                                                                                                                                                                                                                                                        
+                                                                                                                                                                                                                                                                                                                                                            <input type="text" name="wa" placeholder="Nomor WhatsApp" required><br>
+                                                                                                                                                                                                                                                                                                                                                            ';
                         }
-
-                        else {
-                            echo '
-                                    <input type="number" name="jumlahAnggota" value=1 hidden readonly>
-
-                                    <input type="text" pattern="[0-9]{9}" name="nrpAnggota[]" title="NRP UBAYA" placeholder="NRP" maxlength="9" required><br>
-
-                                    <input type="text" name="line" placeholder="ID Line" required><br>
-
-                                    <input type="text" name="wa" placeholder="Nomor WhatsApp" required><br>
-                                    ';
-                        }
-
+                        
                         // $formPendaftaran = '
                         //             <label>Form Pendaftaran (.pdf)</label><br>
                         //             <input type="file" name="formDaftar" class="inputLomba" accept=".pdf" required><br>
                         //             <label class="label-keterangan">*) format nama file: Nama_NRP</label><br>
                         //             ';
-
-                        $pilmapres = '
-                                    <label>Form Pendaftaran (.pdf)</label><br>
-                                    <input type="file" name="formDaftar" class="inputLomba" accept=".pdf" required><br>
-                                    <label class="label-keterangan">*) format nama file: Nama_NRP</label><br>
                         
-                                    <label>Surat Pernyataan Kesediaan Mewakili Ubaya (.pdf)</label><br>
-                                    <input type="file" name="suratPernyataan" class="inputLomba" accept=".pdf" required><br>
-                                    <label class="label-keterangan">*) wajib diprint, diberi materai Rp 10.000,00, diberi tandatangan basah mengenai materai Rp10.000,00<br>
-                                        format nama file: KesediaanMP_Nama Depan_NRP</label><br>
-
-                                    <label>Borang (.pdf)</label>
-                                    <input type="file" name="borang" class="inputLomba" id="form-pendaftaran" accept=".pdf" required><br>
-                                    <label class="label-keterangan">*) format nama file: BPMP_Nama Depan_NRP</label><br>
-
-                                    <label>Rekap IPK (.pdf)</label><br>
-                                    <input type="file" name="rekapIPK" class="inputLomba" accept=".pdf" required><br>
-                                    <label class="label-keterangan">*) Dalam bentuk Transkrip. Format nama: Transkrip_Nama Depan_NRP </label><br>
-
-                                    <label>Daftar 10 Prestasi + Bukti (.pdf)</label><br>
-                                    <input type="file" name="daftarPrestasi" class="inputLomba" accept=".pdf" required><br>
-                                    <label class="label-keterangan">*) format nama file: PrestasiMP_Nama Depan_NRP</label><br>
-
-                                    <label>Scan KTM / Screenshot KTM Online dan KTP / KITAS (.pdf)</label><br>
-                                    <input type="file" name="ktm1" class="inputLomba" accept=".pdf" required><br>
-                                    <label class="label-keterangan">*) Screenshot MyUbaya pada bagian Kartu Studi Mahasiswa (dalam fitur KS/KHS) wajib terdapat Nama dan NRP
-                                        <br>format nama file: KTMKTP-MP_Nama Depan_NRP / KTMKITAS-MP_Nama Depan_NRP </label><br>
-
-                                    <label>Pas Foto 4x6 (.png / .jpg)</label><br>
-                                    <input type="file" name="pasFoto1" class="inputLomba" accept=".png, .jpg" required><br>
-                                    <label class="label-keterangan">*) format nama file: PasFotoMP_Nama Depan_NRP</label><br>
-
-                                    ';
+                        $pilmapres = '
+                                                                                                                                                                                                                                                                                                                                                            <label>Form Pendaftaran (.pdf)</label><br>
+                                                                                                                                                                                                                                                                                                                                                            <input type="file" name="formDaftar" class="inputLomba" accept=".pdf" required><br>
+                                                                                                                                                                                                                                                                                                                                                            <label class="label-keterangan">*) format nama file: Nama_NRP</label><br>
+                                                                                                                                                                                                                                                                                                                                                
+                                                                                                                                                                                                                                                                                                                                                            <label>Surat Pernyataan Kesediaan Mewakili Ubaya (.pdf)</label><br>
+                                                                                                                                                                                                                                                                                                                                                            <input type="file" name="suratPernyataan" class="inputLomba" accept=".pdf" required><br>
+                                                                                                                                                                                                                                                                                                                                                            <label class="label-keterangan">*) wajib diprint, diberi materai Rp 10.000,00, diberi tandatangan basah mengenai materai Rp10.000,00<br>
+                                                                                                                                                                                                                                                                                                                                                                format nama file: KesediaanMP_Nama Depan_NRP</label><br>
+                                                                                                                                                                                                                                                                                                                        
+                                                                                                                                                                                                                                                                                                                                                            <label>Borang (.pdf)</label>
+                                                                                                                                                                                                                                                                                                                                                            <input type="file" name="borang" class="inputLomba" id="form-pendaftaran" accept=".pdf" required><br>
+                                                                                                                                                                                                                                                                                                                                                            <label class="label-keterangan">*) format nama file: BPMP_Nama Depan_NRP</label><br>
+                                                                                                                                                                                                                                                                                                                        
+                                                                                                                                                                                                                                                                                                                                                            <label>Rekap IPK (.pdf)</label><br>
+                                                                                                                                                                                                                                                                                                                                                            <input type="file" name="rekapIPK" class="inputLomba" accept=".pdf" required><br>
+                                                                                                                                                                                                                                                                                                                                                            <label class="label-keterangan">*) Dalam bentuk Transkrip. Format nama: Transkrip_Nama Depan_NRP </label><br>
+                                                                                                                                                                                                                                                                                                                        
+                                                                                                                                                                                                                                                                                                                                                            <label>Daftar 10 Prestasi + Bukti (.pdf)</label><br>
+                                                                                                                                                                                                                                                                                                                                                            <input type="file" name="daftarPrestasi" class="inputLomba" accept=".pdf" required><br>
+                                                                                                                                                                                                                                                                                                                                                            <label class="label-keterangan">*) format nama file: PrestasiMP_Nama Depan_NRP</label><br>
+                                                                                                                                                                                                                                                                                                                        
+                                                                                                                                                                                                                                                                                                                                                            <label>Scan KTM / Screenshot KTM Online dan KTP / KITAS (.pdf)</label><br>
+                                                                                                                                                                                                                                                                                                                                                            <input type="file" name="ktm1" class="inputLomba" accept=".pdf" required><br>
+                                                                                                                                                                                                                                                                                                                                                            <label class="label-keterangan">*) Screenshot MyUbaya pada bagian Kartu Studi Mahasiswa (dalam fitur KS/KHS) wajib terdapat Nama dan NRP
+                                                                                                                                                                                                                                                                                                                                                                <br>format nama file: KTMKTP-MP_Nama Depan_NRP / KTMKITAS-MP_Nama Depan_NRP </label><br>
+                                                                                                                                                                                                                                                                                                                        
+                                                                                                                                                                                                                                                                                                                                                            <label>Pas Foto 4x6 (.png / .jpg)</label><br>
+                                                                                                                                                                                                                                                                                                                                                            <input type="file" name="pasFoto1" class="inputLomba" accept=".png, .jpg" required><br>
+                                                                                                                                                                                                                                                                                                                                                            <label class="label-keterangan">*) format nama file: PasFotoMP_Nama Depan_NRP</label><br>
+                                                                                                                                                                                                                                                                                                                        
+                                                                                                                                                                                                                                                                                                                                                            ';
                         $tambahan = '
-                                    <label>Pas Foto 4x6 (.png / .jpg)</label><br>
-                                    <input type="file" name="pasFoto1" class="inputLomba" accept=".png, .jpg" required><br>
-                                    <label class="label-keterangan">*) format nama file: Foto_Nama_NRP</label><br>
-
-                                    ';
+                                                                                                                                                                                                                                                                                                                                                            <label>Pas Foto 4x6 (.png / .jpg)</label><br>
+                                                                                                                                                                                                                                                                                                                                                            <input type="file" name="pasFoto1" class="inputLomba" accept=".png, .jpg" required><br>
+                                                                                                                                                                                                                                                                                                                                                            <label class="label-keterangan">*) format nama file: Foto_Nama_NRP</label><br>
+                                                                                                                                                                                                                                                                                                                        
+                                                                                                                                                                                                                                                                                                                                                            ';
                         $pilihanMIPA = '
-                                <label>Form Pendaftaran (.pdf)</label><br>
-                                <input type="file" name="formDaftar" class="inputLomba" accept=".pdf" required><br>
-                                <label class="label-keterangan">*) format nama file: Nama_NRP</label><br>        
-                                        
-                                <label>Surat Pernyataan Kesediaan Mewakili Ubaya (.pdf)</label><br>
-                                <input type="file" name="suratPernyataan" class="inputLomba" accept=".pdf" required><br>
-                                <label class="label-keterangan">*) wajib diprint, diberi materai Rp 10.000,00, diberi tandatangan basah mengenai materai Rp10.000,00<br>
-                                format nama file: Surat Pernyataan_Nama_NRP</label><br>
-
-                                <label>Jenis Kompetisi</label><br>
-                                <input type="radio" id="matematika" name="jenisKompetisi" value="Matematika" checked required>
-                                <label for="matematika">Matematika</label>&nbsp;&nbsp;&nbsp;
-                                <input type="radio" id="fisika" name="jenisKompetisi" value="Fisika" required>
-                                <label for="fisika">Fisika</label>&nbsp;&nbsp;&nbsp;
-                                <input type="radio" id="kimia" name="jenisKompetisi" value="Kimia" required>
-                                <label for="kimia">Kimia</label>&nbsp;&nbsp;&nbsp;
-                                <input type="radio" id="biologi" name="jenisKompetisi" value="Biologi" required>
-                                <label for="biologi">Biologi</label>&nbsp;;&nbsp;
-                                <input type="radio" id="statistika" name="jenisKompetisi" value="Statistika" required>
-                                <label for="statistika">Statistika</label><br>
-
-                                <label>Scan KTM / Screenshot KTM Online (.pdf)</label><br>
-                                <input type="file" name="ktm1" class="inputLomba" accept=".pdf" required><br>
-                                <label class="label-keterangan">*) Screenshot MyUbaya pada bagian Kartu Studi Mahasiswa (dalam fitur KS/KHS) wajib terdapat Nama dan NRP
-                                    <br>format nama file: KTM_Nama_NRP</label><br>
-
-                                <label>Pas Foto 4x6 (.png / .jpg)</label><br>
-                                <input type="file" name="pasFoto1" class="inputLomba" accept=".png, .jpg" required><br>
-                                <label class="label-keterangan">*) format nama file: Foto_Nama_NRP</label><br>
-
-                                ';
-                            
+                                                                                                                                                                                                                                                                                                                                                        <label>Form Pendaftaran (.pdf)</label><br>
+                                                                                                                                                                                                                                                                                                                                                        <input type="file" name="formDaftar" class="inputLomba" accept=".pdf" required><br>
+                                                                                                                                                                                                                                                                                                                                                        <label class="label-keterangan">*) format nama file: Nama_NRP</label><br>        
+                                                                                                                                                                                                                                                                                                                                                                
+                                                                                                                                                                                                                                                                                                                                                        <label>Surat Pernyataan Kesediaan Mewakili Ubaya (.pdf)</label><br>
+                                                                                                                                                                                                                                                                                                                                                        <input type="file" name="suratPernyataan" class="inputLomba" accept=".pdf" required><br>
+                                                                                                                                                                                                                                                                                                                                                        <label class="label-keterangan">*) wajib diprint, diberi materai Rp 10.000,00, diberi tandatangan basah mengenai materai Rp10.000,00<br>
+                                                                                                                                                                                                                                                                                                                                                        format nama file: Surat Pernyataan_Nama_NRP</label><br>
+                                                                                                                                                                                                                                                                                                                        
+                                                                                                                                                                                                                                                                                                                                                        <label>Jenis Kompetisi</label><br>
+                                                                                                                                                                                                                                                                                                                                                        <input type="radio" id="matematika" name="jenisKompetisi" value="Matematika" checked required>
+                                                                                                                                                                                                                                                                                                                                                        <label for="matematika">Matematika</label>&nbsp;&nbsp;&nbsp;
+                                                                                                                                                                                                                                                                                                                                                        <input type="radio" id="fisika" name="jenisKompetisi" value="Fisika" required>
+                                                                                                                                                                                                                                                                                                                                                        <label for="fisika">Fisika</label>&nbsp;&nbsp;&nbsp;
+                                                                                                                                                                                                                                                                                                                                                        <input type="radio" id="kimia" name="jenisKompetisi" value="Kimia" required>
+                                                                                                                                                                                                                                                                                                                                                        <label for="kimia">Kimia</label>&nbsp;&nbsp;&nbsp;
+                                                                                                                                                                                                                                                                                                                                                        <input type="radio" id="biologi" name="jenisKompetisi" value="Biologi" required>
+                                                                                                                                                                                                                                                                                                                                                        <label for="biologi">Biologi</label>&nbsp;;&nbsp;
+                                                                                                                                                                                                                                                                                                                                                        <input type="radio" id="statistika" name="jenisKompetisi" value="Statistika" required>
+                                                                                                                                                                                                                                                                                                                                                        <label for="statistika">Statistika</label><br>
+                                                                                                                                                                                                                                                                                                                        
+                                                                                                                                                                                                                                                                                                                                                        <label>Scan KTM / Screenshot KTM Online (.pdf)</label><br>
+                                                                                                                                                                                                                                                                                                                                                        <input type="file" name="ktm1" class="inputLomba" accept=".pdf" required><br>
+                                                                                                                                                                                                                                                                                                                                                        <label class="label-keterangan">*) Screenshot MyUbaya pada bagian Kartu Studi Mahasiswa (dalam fitur KS/KHS) wajib terdapat Nama dan NRP
+                                                                                                                                                                                                                                                                                                                                                            <br>format nama file: KTM_Nama_NRP</label><br>
+                                                                                                                                                                                                                                                                                                                        
+                                                                                                                                                                                                                                                                                                                                                        <label>Pas Foto 4x6 (.png / .jpg)</label><br>
+                                                                                                                                                                                                                                                                                                                                                        <input type="file" name="pasFoto1" class="inputLomba" accept=".png, .jpg" required><br>
+                                                                                                                                                                                                                                                                                                                                                        <label class="label-keterangan">*) format nama file: Foto_Nama_NRP</label><br>
+                                                                                                                                                                                                                                                                                                                        
+                                                                                                                                                                                                                                                                                                                                                        ';
+                        
                         // echo $formPendaftaran;
-
+                        
                         switch ($id) {
                             case 1:
                                 echo $pilmapres;
                                 break;
-
+                        
                             case 5:
                                 echo $pilihanMIPA;
                                 break;
@@ -260,6 +261,41 @@
                 </form>
             </div>
         </div>
+        <!-- Modal -->
+        <div class="modal fade" id="mekanisme" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                <div class="modal-content">
+                    <div class="modal-header" style="background-color: #211e51;">
+                        <h5 class="modal-title text-white fw-bold" id="exampleModalLabel">Mekanisme Pendaftaran PIMUS XI
+                        </h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p>
+                            1. Peserta melengkapi berkas yang dibutuhkan untuk pendaftaran sesuai dengan pedoman cabang/PKM
+                            yang
+                            diikuti. Pedoman dapat dilihat <a href='https://tinyurl.com/PedomanPimus13'
+                                target='_blank'>disini</a>.<br>
+                            2. Pendaftaran dapat dilakukan pada website <a href='https://ubayapimus.com'
+                                target='_blank'>ubayapimus.com</a><br>
+                            3. Peserta harus register/sign up terlebih dahulu pada website.<br>
+                            <small class='text-danger'>Note &#58; Jika mendaftar berkelompok, maka seluruh anggota harus
+                                register/sign up terlebih dahulu pada website sebelum melakukan pendaftaran.</small><br>
+                            4. Peserta mengupload formulir pendaftaran dan seluruh berkas yang dibutuhkan sesuai dengan
+                            cabang/PKM yang diikuti.<br>
+                            <small class='text-danger'>Note &#58; File formulir pendaftaran terdapat di folder berkas
+                                wajib.</small><br>
+                            5. Perhatikan ketentuan pada saat mendaftar dan pastikan telah sesuai.<br>
+                            6. Berkas yang telah disubmit saat pendaftaran akan dilakukan pengecekan oleh panitia.<br>
+                            7. Jika berkas yang dikumpulkan tidak sesuai dengan ketentuan, panitia akan menghubungi ketua
+                            kelompok untuk mensubmit ulang berkas pendaftaran.<br>
+                            8. Jika hingga batas akhir pendaftaran, berkas yang dikumpulkan tidak sesuai maka peserta
+                            dianggap
+                            <b>TIDAK TERDAFTAR SEBAGAI PESERTA PIMUS XIII.</b><br>
+                        </p>
+                    </div>
+                </div>
+            </div>
     </section>
 @endsection
 
@@ -272,10 +308,9 @@
             console.debug(id);
 
             if (id > 1 && id < 5 || id > 5) {
-                if(id == 4 || id >= 7){
+                if (id == 4 || id >= 7) {
                     displayForm(3);
-                }
-                else{
+                } else {
                     console.debug("masuk if");
                     displayForm(2);
                 }

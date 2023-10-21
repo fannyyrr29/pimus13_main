@@ -1006,7 +1006,7 @@ h3.regis {
 
 /* button mekanisme */
 .btn-mekanisme {
-    margin-bottom: 50px;
+    margin-bottom: 30px;
     width: 100%;
     min-height: 50px;
     background-color: #5a5b8a;
@@ -1016,6 +1016,7 @@ h3.regis {
     transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out;
     border: none;
     font-size: 2em;
+    letter-spacing: 2px;
 }
 
 .btn-mekanisme:hover{
