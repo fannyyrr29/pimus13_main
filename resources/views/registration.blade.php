@@ -138,7 +138,7 @@
                                 </p>
                             </div>
                             <div class='showed-content'>
-                                <img src='/assets/images/logo-cabang/PKM-Riset Sosial Humaniora.png' alt=''
+                                <img src='/assets/images/logo-cabang/PKM-Riset Sosial Humaniora.png' alt=''>
                             </div>
                         </div>
                     </a>
