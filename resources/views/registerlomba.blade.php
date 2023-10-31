@@ -17,8 +17,8 @@
                                 Pendaftaran</button>
                             <p style="color: #ffde40 "> *) Surat pernyataan terdapat dalam setiap pedoman cabang lomba,
                                 silahkan
-                                klik mekanisme
-                                pendaftaran untuk informasi lebih lanjut.</p>
+                                <b>klik mekanisme
+                                    pendaftaran</b> untuk informasi lebih lanjut.</p>
                         </div>
                         <input type="text" id="cabang" value="{{ $category->id }}" name="idLomba" readonly hidden>
                         @if ($team != null)
@@ -256,7 +256,7 @@
                     <div id="lanjutan" onload="displayForm(1);">
                     </div>
                     <div>
-                        <input type="submit" value="Submit">
+                        <input type="submit" value="Submit" id="btnSubmit">
                     </div>
                 </form>
             </div>
@@ -298,7 +298,7 @@
             </div>
     </section>
 @endsection
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script>
     //[JABESH]
     function gantiJumlah() {
