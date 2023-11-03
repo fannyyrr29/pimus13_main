@@ -30,7 +30,7 @@ class SubmissionController extends Controller
             ->where('user_details.nrp', '=', $user->nrp)
             ->where('user_details.role', '=', 'Ketua')
             ->where('teams.status', '=', 'Terima')
-            ->whereIn('competition_categories.id', [1, 4, 7, 8, 9, 10, 11])//kompetisi yang berkelompok
+            ->whereIn('competition_categories.id', [2, 3, 6, 7, 8, 9, 10, 11, 12]) //kompetisi yang berkelompok
             ->get();
 
         // dd($group);
@@ -38,12 +38,10 @@ class SubmissionController extends Controller
         if ($group->isNotEmpty()) {
             if (count($group) > 0) {
                 return view('submission', ["group" => $group]);
-            }
-            else {
+            } else {
                 $status = "Anda tidak termasuk kelompok apapun";
             }
-        }
-        else {
+        } else {
             $status = "Hanya anggota yang sudah mendaftar dan berperan menjadi ketua yang boleh mengumpulkan";
         }
 
@@ -55,7 +53,7 @@ class SubmissionController extends Controller
         //                     ->join('competition_categories', 'submission_dates.id', '=', 'competition_categories.id')
         //                     ->select('submission_dates.*', 'competition_categories.name')
         //                     ->get();
-                            
+
         // return view('submission', compact('listSubmission'));
     }
 
@@ -74,12 +72,12 @@ class SubmissionController extends Controller
         $description = $request->description;
 
         DB::table('submissions')->insert([
-                    'teams_id' => $idkelompok,
-                    'competition_categories_id' => $lomba,
-                    'link_exhibition' => $linkEx,
-                    'link_proposal' => $linkProp,
-                    'description' => $description,
-                    'like_count' => 0
+            'teams_id' => $idkelompok,
+            'competition_categories_id' => $lomba,
+            'link_exhibition' => $linkEx,
+            'link_proposal' => $linkProp,
+            'description' => $description,
+            'like_count' => 0
         ]);
 
 

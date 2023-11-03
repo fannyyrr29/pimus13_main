@@ -52,7 +52,7 @@
                         @else
                             <td data-label="Deadline">2 Desember 2022 23:59 WIB</td>
                             @php
-                                $datetime1 = new DateTime('2022-12-02 23:59:59');
+                                $datetime1 = new DateTime('2023-12-02 23:59:59');
                                 $datetime1 = $datetime1->format('Y-m-d H:i:s');
                             @endphp
                         @endif
