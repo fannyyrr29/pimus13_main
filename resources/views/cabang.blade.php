@@ -72,23 +72,30 @@
                         if ($open == true) {
                             if($category->id==8)
                                 {
-                                    echo '
-                                    <div>
-                                        <a href="/registration/cabang/register?cabang=8" class="buttons" id="register">Register PKM-Riset Sosial Humaniora</a><br><br>
-                                        <a href="/registration/cabang/register?cabang=9" class="buttons" id="register">Register PKM-Kewirausahaan</a><br><br>
-                                        <a href="/registration/cabang/register?cabang=10" class="buttons" id="register">Register PKM-Karsa Cipta</a><br><br>
-                                        <a href="/registration/cabang/register?cabang=11" class="buttons" id="register">Register PKM-Pengabdian kepada Masyarakat</a><br><br>
+                                    // echo '
+                                    // <div>
+                                    //     <a href="/registration/cabang/register?cabang=8" class="buttons" id="register">Register PKM-Riset Sosial Humaniora</a><br><br>
+                                    //     <a href="/registration/cabang/register?cabang=9" class="buttons" id="register">Register PKM-Kewirausahaan</a><br><br>
+                                    //     <a href="/registration/cabang/register?cabang=10" class="buttons" id="register">Register PKM-Karsa Cipta</a><br><br>
+                                    //     <a href="/registration/cabang/register?cabang=11" class="buttons" id="register">Register PKM-Pengabdian kepada Masyarakat</a><br><br>
                                         
-                                    </div>
-                                    ';            
+                                    // </div>
+                                    // ';            
                                 }
-                            else 
-                                {
-                                    echo '
+                            else if($category->id == 7 || $category->id == 5){
+                                 echo '
                                     <div>
                                         <a href="/registration/cabang/register?cabang='.$category->id.'" class="buttons" id="register">Register Now!</a>
                                     </div>
                                     ';
+                            }
+                            else 
+                                {
+                                    // echo '
+                                    // <div>
+                                    //     <a href="/registration/cabang/register?cabang='.$category->id.'" class="buttons" id="register">Register Now!</a>
+                                    // </div>
+                                    // ';
                                 }
                         }
                         else {
@@ -118,13 +125,20 @@
                                     ';
             
                                 }
-                                else 
-                                {
+                                else if($category->id == 7 || $category->id == 5){
                                     echo '
                                     <div>
                                         <a href="/registration/cabang/register?cabang='.$category->id.'" class="buttons" id="register">Register Now!</a>
                                     </div>
                                     ';
+                                }
+                                else 
+                                {
+                                    // echo '
+                                    // <div>
+                                    //     <a href="/registration/cabang/register?cabang='.$category->id.'" class="buttons" id="register">Register Now!</a>
+                                    // </div>
+                                    // ';
                                 }
                                 echo '
                                 <div class="mt-3" style="font-weight: bold;">
