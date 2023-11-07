@@ -40,7 +40,7 @@
                         @if($grp->competition_categories_id == 1)
                             <td data-label="Deadline">5 Desember 2022 23:59 WIB</td>
                             @php
-                                $datetime1 = new DateTime('2022-12-05 23:59:59');
+                                $datetime1 = new DateTime('2023-12-05 23:59:59');
                                 $datetime1 = $datetime1->format('Y-m-d H:i:s');
                             @endphp
                         @elseif($grp->competition_categories_id == 4)
@@ -178,14 +178,7 @@
                                     </div>
                                 </div>`
             }
-            else if (pidkategori == 1){
-                isi.innerHTML += `<div class="mb-3">
-                                    <label for="LinkProposal" class="form-label">Link Drive</label>
-                                    <input type="text" class="form-control" id="LinkProposal" name="LinkProposal"
-                                        placeholder="Input Google Drive Link" required>
-                                </div>`
-            }
-            else if (pidkategori == 4){
+            else if (pidkategori == 6){
                 isi.innerHTML += `<div class="col">
                                     <div class="mb-3">
                                         <label for="LinkGoogleDrive" class="form-label">Link Drive Poster</label>
@@ -203,7 +196,36 @@
                                             placeholder="Deskripsi" rows="3" maxlength="200" required></textarea>
                                     </div>
                                 </div>`
-            }else{
+            }
+            else if (pidkategori == 1){
+                isi.innerHTML += `<div class="col">
+                                    <div class="mb-3">
+                                        <label for="LinkGoogleDrive" class="form-label">Link Video</label>
+                                        <input type="text" class="form-control" id="linkDrive" name="linkDrive"
+                                            placeholder="Input Video Link" required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="LinkProposal" class="form-label">Link Drive Proposal</label>
+                                        <input type="text" class="form-control" id="LinkProposal" name="LinkProposal"
+                                            placeholder="Input Google Drive Link" required>
+                                    </div>
+                                </div>`
+            }
+            else if(pidkategori == 12){
+                isi.innerHTML += `<div class="col">
+                                    <div class="mb-3">
+                                        <label for="LinkGoogleDrive" class="form-label">Link Drive Presentasi</label>
+                                        <input type="text" class="form-control" id="linkDrive" name="linkDrive"
+                                            placeholder="Input Google Drive Link" required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="LinkProposal" class="form-label">Link Drive Proposal</label>
+                                        <input type="text" class="form-control" id="LinkProposal" name="LinkProposal"
+                                            placeholder="Input Google Drive Link" required>
+                                    </div>
+                                  </div>`
+            }
+            else{
                 isi.innerHTML += `<div class="mb-3">
                                     <label for="LinkProposal" class="form-label">Link Drive Proposal</label>
                                     <input type="text" class="form-control" id="LinkProposal" name="LinkProposal"
@@ -220,7 +242,7 @@
         $('#btnSubmit').on('click', function() {
             if (!confirm("Are you sure?")) return
 
-            if(idlomba == 4 || idlomba == 7){
+            if(idlomba == 6 || idlomba == 7 || idlomba == 12 || idlomba == 1){
                 var linkEx = $("#linkDrive").val()
                 var linkProp = $("#LinkProposal").val()
                 var description = $("#description").val()
