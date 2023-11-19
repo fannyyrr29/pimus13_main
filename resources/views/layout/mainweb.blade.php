@@ -66,8 +66,8 @@
                         </a>
                         <div class="dropdown-menu nav-center" aria-labelledby="navbarDropdownMenuLink">
                             {{-- <a class="dropdown-item" href="{{ route('exhibition',4) }}">KTI</a> --}}
-
-                            <a class="dropdown-item" href="{{ route('exhibition',7) }}">Video Digital Pendidikan</a>
+                            <a class="dropdown-item" href="{{ route('exhibition',6) }}">Poster</a>
+                            {{-- <a class="dropdown-item" href="{{ route('exhibition',7) }}">Video Digital Pendidikan</a> --}}
                         </div>
                     </li>
                     @endif
