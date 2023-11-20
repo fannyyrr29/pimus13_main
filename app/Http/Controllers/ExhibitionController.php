@@ -46,11 +46,28 @@ class ExhibitionController extends Controller
 
             // dd($submission);
 
+            $posters =  DB::table('posters')
+                        ->select('posters.id as posters_id','posters.judul as judul', 'posters.path as path', 'posters.teams_id', 'user_details.nrp', 'users.name')
+                        ->join('user_details','user_details.teams_id','=','posters.teams_id')
+                        ->join('users','user_details.nrp','=','users.nrp')
+                        ->where('user_details.role','=','Ketua')
+                        ->get();
+
+            $likes = [];
+            foreach($posters as $poster){
+                $like  = DB::table('votes')
+                            ->select(DB::raw("count(posters_id) as count"))
+                            ->where('posters_id','=',$poster->posters_id)
+                            ->first();    
+                if($like->count == null ){
+                    $like = 0;
+                }
+                $likes[] = $like;
+            }
+ 
             return view('exhibition', [
-                'submissions' => $submissions,
-                'cabang' => $cabang,
-                'leaders' => $leaders,
-                'groups' => $groups
+                'posters' => $posters,
+                'likes' => $likes,
             ]);
         } else {
             abort(403, "$idlomba tidak memiliki Exhibition");

@@ -18,6 +18,9 @@
                 <li class="nav-item">   
                     <a class="nav-link{{ request()->is('admin/submissions') ? ' active' : '' }}" aria-current="page" href="{{ route('admin.submissions') }}">Submissions</a>
                 </li>
+                <li class="nav-item">   
+                    <a class="nav-link{{ request()->is('admin/addposter') ? ' active' : '' }}" aria-current="page" href="{{ route('admin.poster') }}">Add Poster</a>
+                </li>
                 <li class="nav-item nav-center ml-5">
                     <a class="nav-link btnLogin btn btn-danger text-white" href="{{ route('logout') }}" onclick="event.preventDefault();
                                       document.getElementById('logout-form').submit();">

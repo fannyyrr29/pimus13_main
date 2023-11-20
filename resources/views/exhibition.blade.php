@@ -5,6 +5,7 @@ PIMUS 13 - Exhibition
 @endsection
 
 @section('content')
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
 <section id="exhibition" style="margin-top: 150px;">
     <div class="container">
         @if ($errors->any())
@@ -16,130 +17,87 @@ PIMUS 13 - Exhibition
 
         <div class="row">
             <div class="col-12 exhibition-title">
-                <h1>exhibition {{ $cabang->nama }}</h1>
+                <h1>Exhibition</h1>
             </div>
         </div>
 
         <div class="row">
-            @if ($submissions->count() != 0)
+            @if ($posters->count() != 0)
                 @php
                     // For submission counter
                     $counter = 1;
                 @endphp
-                @foreach ($submissions as $submission)
-                    @if ($submission->link_exhibition != null)
+                @foreach ($posters as $index => $poster)
+                    @if ($poster->path != null)
                         @php
                         $matches=array();
-                        $img='';
-                        $video='';
-                        $kti='';
-                        switch ($submission->competition_categories_id) {
-                            // case 1:
-                                // preg_match('/(?<=file\/d\/)(.*)(?=\/)/', $submission->link_exhibition, $matches);
-                                // $img='https://drive.google.com/uc?export=view&id='.$matches[0];
-                                // break;
-                            
-                            case 4:
-                                preg_match('/(?<=file\/d\/)(.*)(?=\/)/', $submission->link_exhibition, $matches);
-                                $img='https://drive.google.com/uc?export=view&id='.$matches[0];
-                                break;
-                                
-                                
-                            // case 6:
-                            //     preg_match('/(?<=file\/d\/)(.*)(?=\/)/', $submission->link_exhibition, $matches);
-                            //     $img='https://drive.google.com/uc?export=view&id='.$matches[0];
-                            //     break;
-                
-                            case 7:
-                                preg_match('/(?<=youtu.be\/)(.*)/', $submission->link_exhibition, $matches);
-                                $img='https://img.youtube.com/vi/'.$matches[0].'/0.jpg';
-                                $video='https://www.youtube.com/embed/'.$matches[0];
-                                break;
-
-                            // case 7:
-                            //     preg_match('/(?<=file\/d\/)(.*)(?=\/)/', $submission->link_exhibition, $matches);
-                            //     $video='https://drive.google.com/uc?export=view&id='.$matches[0];
-                            //     break;
-                        }
+                        preg_match('/(?<=file\/d\/)(.*)(?=\/)/', $poster->path, $matches);
+                        $img='https://ubayapimus.com/'.$poster->path;
                         @endphp
                     <div class="col-lg-3 col-md-6 col-sm-6">
                         <div class="wrapper">
-                            <div class="card-exhibition">
-                                <img src="{{ url($img) }}" alt="{{ $cabang->name." ".$counter }}">
+                            <div class="card-exhibition" data-bs-toggle="modal" data-bs-target="#posterCard{{ $poster->posters_id }}">
+                                <img src="{{ url($img) }}" alt="">
                                 <div class="info">
-                                    <h1>{{ $cabang->name." ".$counter }}</h1>
+                                    <h1>{{$poster->judul}}</h1>
                                     <p>
                                         <i>
-                                            @if ($submission->teams_id != null)
-                                                {{-- Get group leader name if no name --}}
-                                                @php
-                                                    $name = null;
-        
-                                                    foreach ($leaders as $leader) {
-                                                        if ($leader->teams_id == $submission->teams_id)
-                                                            $name = $leader->name;
-                                                    }
-                                                @endphp
-                                                
-                                                @if ($name == null)
-                                                    Error No Name
-                                                @else
-                                                    {{ $name }}
-                                                @endif
-                                            @else
-                                                {{ $submission->name }}
-                                            @endif    
+                                           {{$poster->name}}
                                         </i>
                                     </p>
-                                    <button class="btn-vote" data-bs-toggle="modal"
-                                        data-bs-target="#exhibitionCard{{ $submission->id }}">Read
-                                        More</button>
+                                    <p>Votes: {{$likes[$index]}}</p>
+                                    
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="modal fade" id="exhibitionCard{{ $submission->id }}" tabindex="-1"
+                    
+                    <!-- Modal Body -->
+                    <!-- if you want to close by clicking outside the modal, delete the last endpoint:data-bs-backdrop and data-bs-keyboard -->
+                    <div class="modal fade" id="posterCard{{$poster->posters_id}}" tabindex="-1" " role="dialog" aria-labelledby="modalTitleId" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-md" role="document">
+                            <div class="modal-content">
+                                
+                                <div class="modal-body">
+                                    <img src="{{ url($img) }}" alt="">
+                                </div>
+                                <div class="modal-footer">
+                                    <button class="btn btn-success w-100"><i class="bi bi-hand-thumbs-up-fill px-2"></i>Vote</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    
+                    <!-- Optional: Place to the bottom of scripts -->
+                    <script>
+                        const myModal = new bootstrap.Modal(document.getElementById('modalId'), options)
+                    
+                    </script>
+                    {{-- <div class="modal fade" id="exhibitionCard{{ $poster->posters_id }}" tabindex="-1"
                         aria-labelledby="exhibitionCardLabel" aria-hidden="true">
                         <div class="modal-dialog modal-dialog-centered modal-xl">
                             <div class="modal-content">
                                 <div class="modal-header" style="background-color: #ebb010;">
-                                    <h5 class="modal-title text-white" id="formExhibition">Exhibition {{ $cabang->nama }}</h5>
+                                    <h5 class="modal-title text-white" id="formExhibition">Exhibition Poster</h5>
                                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                 </div>
                                 <div class="modal-body">
                                     <div class="container-fluid">
                                         <form action="{{ route('exhibition.vote', [
-                                            'id' => $submission->id
+                                            'id' => $poster->posters_id
                                         ]) }}" method="POST">
                                             @csrf
                                             <div class="row justify-content-center mb-3 exhibition-content">
-                                                    @switch($cabang->id)
-                                                        @case(1)
-                                                            <div class="col-lg-4 col-md-12 mt-3">
-                                                                <a href="{{ url($img) }}" target="_blank">
-                                                                    <img class="exhibition-img"
-                                                                        src="{{ url($img) }}"
-                                                                        alt="{{ $cabang->nama." ".$counter }}">
-                                                                </a>
-                                                            </div>
-                                                            @break
-                                                        @case(4)
-                                                            <div class="col-lg-4 col-md-12 mt-3">
-                                                                <a href="{{ url($img) }}" target="_blank">
-                                                                    <img class="exhibition-img"
-                                                                        src="{{ url($img) }}"
-                                                                        alt="{{ $cabang->name." ".$counter }}">
-                                                                </a>
-                                                            </div>
-                                                            @break
-                                                        @case(7)
-                                                            <div class="col-12 ex-video">
-                                                                <iframe class="exhibition-content" style="width: 100%; height: 100%;"
-                                                                    src={{ url($video) }} frameborder="0" allow="fullscreen">
-                                                                </iframe>
-                                                            </div>
-                                                        @break
-                                                    @endswitch
+                                                    
+                                                <div class="col-lg-4 col-md-12 mt-3">
+                                                    <a href="{{ url($img) }}" target="_blank">
+                                                        <img class="exhibition-img"
+                                                            src="{{ url($img) }}"
+                                                            alt="{{ $cabang->name." ".$counter }}">
+                                                    </a>
+                                                </div>
+                                                        
                                                 <div class="col-lg-8 col-md-12 mt-3">
                                                     <h1 class="ex-title">
                                                         {{ $cabang->nama." ".$counter }}</h1>
@@ -147,7 +105,7 @@ PIMUS 13 - Exhibition
                                                     <p class="ex-by">
                                                         Ketua :
                                                         @if ($submission->teams_id != null)
-                                                            {{-- Get group leader name if no name --}}
+                                                            {{-- Get group leader name if no name
                                                             @php
                                                                 $name = null;
         
@@ -188,7 +146,7 @@ PIMUS 13 - Exhibition
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> --}}
                     @endif
                         @php
                             $counter++;
