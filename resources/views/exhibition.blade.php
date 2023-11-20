@@ -174,11 +174,11 @@ PIMUS 13 - Exhibition
                                                             <p class="text-danger">vote left: {{ Auth::user()->vote_tickets }}</p>
                                                         @endif
 
-                                                        @if (time() <= strtotime("2022-12-09 00:00:00") && time() >= strtotime("2022-12-05 00:00:00"))
+                                                        @if (time() <= strtotime("2023-11-10 00:00:00") && time() >= strtotime("2023-12-1 12:00:00"))
                                                             <button type="submit" class="btnVote">Vote</button>
                                                         @else
                                                             <br>
-                                                            <h4 style="color: red">*) Masa Vote adalah 5-8 Desember</h4>
+                                                            <h4 style="color: red">*) Masa Vote adalah 27 November - 1 Desember</h4>
                                                         @endif
                                                     </div>
                                                 </div>

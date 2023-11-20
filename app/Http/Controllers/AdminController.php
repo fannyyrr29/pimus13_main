@@ -5,12 +5,27 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
+use stdClass;
 
 class AdminController extends Controller
 {
     public function index()
     {
         return view('admin.index');
+    }
+
+    public function poster()
+    {
+        $teams = DB::table('teams')
+                ->select('teams.id as teams_id', 'user_details.nrp as nrp', 'users.name as ketua')
+                ->join('user_details','teams.id','=','user_details.teams_id')
+                ->join('users','user_details.nrp','=','users.nrp')
+                ->where('user_details.role','=','ketua')
+                ->where('teams.competition_categories_id','=',6)
+                ->where('teams.status','=','Terima')
+                ->get();
+
+        return view('admin.addposter', compact('teams'));
     }
     
     public function accounts()
@@ -293,5 +308,25 @@ class AdminController extends Controller
         }
         else
             return redirect()->route('admin.submissions', ['messageType'=>"error", 'message'=>"Terjadi kesalahan dalam penambahan data, mohon cek kembali dan coba lagi"]);
+    }
+    public function addPoster(Request $request)
+    {
+        $teams_id = $request->selectedTeam;
+        $judul = $request->addJudul;
+        
+        $addPoster = $request->file("addPoster");
+        
+        $addPoster->move('storage/poster/',$addPoster->getClientOriginalName());
+        $path_poster = 'storage/poster/'.$addPoster->getClientOriginalName();
+
+        if ($teams_id != null && $judul != null && $addPoster != null) {
+            
+            $temp = array('teams_id'=>$teams_id, 'path'=>$path_poster, 'judul'=>$judul);
+            DB::table('posters')->insert($temp);
+
+            return redirect()->route('admin.poster', ['messageType'=>"success", 'message'=>"Data pengumpulan berhasil ditambahkan"]);
+        }
+        else
+            return redirect()->route('admin.poster', ['messageType'=>"error", 'message'=>"Terjadi kesalahan dalam penambahan data, mohon cek kembali dan coba lagi"]);
     }
 }

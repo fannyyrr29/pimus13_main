@@ -57,6 +57,9 @@ Route::middleware(['auth', 'verified'])->group(function () {
             Route::post('/editSubmissions', [AdminController::class, 'updateSubmissions'])->name('admin.editSubmissions');
             Route::post('/deleteSubmissions', [AdminController::class, 'deleteSubmissions'])->name('admin.deleteSubmissions');
             Route::post('/addSubmission', [AdminController::class, 'addSubmission'])->name('admin.addSubmission');
+
+            Route::get('/addposter', [AdminController::class, 'poster'])->name('admin.poster');
+            Route::post('/poster-add', [AdminController::class, 'addPoster'])->name('admin.addPoster');
         });
     });
 });
