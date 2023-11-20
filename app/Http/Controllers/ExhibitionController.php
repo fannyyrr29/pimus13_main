@@ -17,35 +17,7 @@ class ExhibitionController extends Controller
         $viewable = [6];
         $cabang = CompetitionCategory::find($idlomba);
         if (in_array($idlomba, $viewable)) {
-            $submissions = Submission::all();
-
-            // Catcher jika data tidak lengkap
-            foreach ($submissions as $submission) {
-                if ($submission->competition_categories_id == null) {
-                    $idcabang = DB::table('teams')
-                                ->where('id', '=', $submission->teams_id)
-                                ->first()->competition_categories_id;
-
-                    // DB::table('pengumpulan')
-                    //     ->where('id', '=', $submission->id)
-                    //     ->update(['idlomba' => $idcabang]);
-
-                    Submission::where('id', $submission->id)->update(['competition_categories_id' => $idcabang]);
-                }
-            }
-
             
-            $submissions = Submission::where('competition_categories_id', $idlomba)->get();
-            $groups = Team::all();
-
-            $leaders = DB::table('users')
-                    ->join('user_details', 'users.nrp', '=', 'user_details.nrp')
-                    ->select('users.name', 'user_details.teams_id')
-                    ->where('user_details.role', '=', 'Ketua')
-                    ->get();
-
-            // dd($submission);
-
             $posters =  DB::table('posters')
                         ->select('posters.id as posters_id','posters.judul as judul', 'posters.path as path', 'posters.teams_id', 'user_details.nrp', 'users.name')
                         ->join('user_details','user_details.teams_id','=','posters.teams_id')
