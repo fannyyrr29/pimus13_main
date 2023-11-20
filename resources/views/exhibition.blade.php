@@ -68,7 +68,7 @@ PIMUS 13 - Exhibition
                                         <p class="text-danger">vote left: {{ Auth::user()->vote_tickets }}</p>
                                     @endif
 
-                                    @if (time() <= strtotime("2023-12-1 12:00:00") && time() >= strtotime("2023-11-10 23:59:00"))
+                                    @if (time() <= strtotime("2023-12-1 12:00:00") && time() >= strtotime("2023-11-26 23:59:00"))
                                         <button class="btn btn-success w-100"><i class="bi bi-hand-thumbs-up-fill px-2"></i>Vote</button>
                                     @else
                                         <br>
