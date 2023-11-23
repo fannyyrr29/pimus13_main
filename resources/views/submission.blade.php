@@ -38,21 +38,21 @@
                         <td data-label="Competition Name">{{ $grp->name }}</td>
 
                         @if($grp->competition_categories_id == 1)
-                            <td data-label="Deadline">5 Desember 2022 23:59 WIB</td>
+                            <td data-label="Deadline">24 November 2023 23:59 WIB</td>
                             @php
-                                $datetime1 = new DateTime('2023-12-05 23:59:59');
+                                $datetime1 = new DateTime('2023-11-24 23:59:59');
                                 $datetime1 = $datetime1->format('Y-m-d H:i:s');
                             @endphp
                         @elseif($grp->competition_categories_id == 4)
-                            <td data-label="Deadline">30 November 2022 23:59 WIB</td>
+                            <td data-label="Deadline">24 November 2023 23:59 WIB</td>
                             @php
-                                $datetime1 = new DateTime('2022-11-30 23:59:59');
+                                $datetime1 = new DateTime('2023-11-24 23:59:59');
                                 $datetime1 = $datetime1->format('Y-m-d H:i:s');
                             @endphp
                         @else
-                            <td data-label="Deadline">2 Desember 2022 23:59 WIB</td>
+                            <td data-label="Deadline">24 November 2023 23:59 WIB</td>
                             @php
-                                $datetime1 = new DateTime('2023-12-02 23:59:59');
+                                $datetime1 = new DateTime('2023-11-24 23:59:59');
                                 $datetime1 = $datetime1->format('Y-m-d H:i:s');
                             @endphp
                         @endif
