@@ -9,6 +9,7 @@ use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;
 
 class ExhibitionController extends Controller
 {
@@ -30,11 +31,11 @@ class ExhibitionController extends Controller
                 $like  = DB::table('votes')
                             ->select(DB::raw("count(posters_id) as count"))
                             ->where('posters_id','=',$poster->posters_id)
-                            ->first();    
-                if($like->count == null ){
-                    $like = 0;
-                }
+                            ->first();  
+                              
+                $like = $like->count;
                 $likes[] = $like;
+                
             }
  
             return view('exhibition', [
@@ -48,25 +49,26 @@ class ExhibitionController extends Controller
 
     public function vote(Request $request)
     {
+        $msg = '';
         $id = $request->idPoster;
-        $userID = (string)Auth::user()->nrp; 
-        try {
+        $userID = (string)Auth::user()->nrp;
+        $status = 0;
+        
             if (Auth::user()->email_verified_at != null) {
 
                 $tikets = Auth::user()->vote_tickets;
-                    $vote =  DB::table('votes')
-                        ->select('users_id', 'posters_id')
-                        ->where('users_id','=', $userID)
-                        ->where('posters_id', '=', $id)
-                        ->get();
-                    if($vote->isEmpty())
-                    {
-                        if ($tikets > 0) {
-                            $decreaseTickets = DB::table('users')
-                                ->where('nrp', (string)Auth::user()->nrp)
-                                ->update([
-                                    'vote_tickets' => $tikets - 1
-                                ]);
+                $vote =  DB::table('votes')
+                    ->select('users_id', 'posters_id')
+                    ->where('users_id','=', $userID)
+                    ->where('posters_id', '=', $id)
+                    ->get();
+                if($vote->isEmpty()){
+                    if ($tikets > 0) {
+                        $decreaseTickets = DB::table('users')
+                            ->where('nrp', (string)Auth::user()->nrp)
+                            ->update([
+                                'vote_tickets' => $tikets - 1
+                            ]);
                         if ($decreaseTickets == true) {
                             DB::table('votes')->insert([
                                 'posters_id' => $id,
@@ -79,26 +81,24 @@ class ExhibitionController extends Controller
                             ->update([
                                 'vote_tickets' => $tikets
                             ]);
-    
+
                             throw new Exception("Error decrease tickets");
                         }
-    
-                        return back();
+                        $status = 1;
+                        $msg = "Vote berhasil";
+
+                    }else{
+                        $msg = "Mohon maaf kesempatan vote anda telah habis, Terima Kasih telah melakukan vote";
                     }
-                    else
-                    {
-                        return redirect()->back()->withErrors(['errorMessage' => "Mohon maaf kesempatan vote anda telah habis, Terima Kasih telah melakukan vote"]);
-                    }
+                }else{
+                    $msg = "Mohon maaf anda sudah melakukan vote pada poster ini, Terima Kasih telah melakukan vote";
                 }
-                else{
-                    return redirect()->back()->withErrors(['errorMessage' => "Mohon maaf anda sudah melakukan vote pada poster ini, Terima Kasih telah melakukan vote"]);
-                }
+            }else{
+                $msg = "Anda masih belum melakukan verifikasi, mohon segera lakukan verifikasi";
             }
-            else{
-                return redirect()->back()->withErrors(['errorMessage' => "Anda masih belum melakukan verifikasi, mohon segera lakukan verifikasi"]);
-            }
-        } catch (\Exception $ex) {
-            return redirect()->back()->withErrors(['errorMessage' => "Terjadi kesalahan saat melakukan proses Voting, silakan coba lagi"]);
-        }
+        return response()->json(array([
+            'msg' => $msg,
+            'status' => $status,
+        ]), 200);
     }
 }

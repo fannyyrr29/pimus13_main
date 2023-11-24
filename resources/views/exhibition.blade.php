@@ -14,10 +14,16 @@ PIMUS 13 - Exhibition
             </div>
         @endif
 
+        @if (Session::has('error'))
+            <div class="alert alert-danger" role="alert">
+                {{ Session::get('error') }}
+            </div>
+        @endif
 
-        <div class="row">
+
+        <div class="row mb-4">
             <div class="col-12 exhibition-title">
-                <h1>Exhibition</h1>
+                <h1 class="title">Exhibition</h1>
             </div>
         </div>
 
@@ -61,6 +67,12 @@ PIMUS 13 - Exhibition
                                 
                                 <div class="modal-body">
                                     <img src="{{ url($img) }}" alt="">
+                                    <h5 class="mt-2">{{$poster->judul}}</h5>
+                                    <p>
+                                        <i>
+                                           {{$poster->name}}
+                                        </i>
+                                    </p>
                                 </div>
                                 
                                 <div class="modal-footer">
@@ -68,7 +80,7 @@ PIMUS 13 - Exhibition
                                         <p class="text-danger">Vote left: {{ Auth::user()->vote_tickets }}</p>
                                     @endif
 
-                                    @if (time() <= strtotime("2023-12-1 12:00:00") && time() >= strtotime("2023-10-26 23:59:00"))
+                                    @if (time() <= strtotime("2023-12-1 12:00:00") && time() >= strtotime("2023-11-26 23:59:00"))
                                         <button class="btn btn-success w-100" id="button{{$poster->posters_id}}"><i class="bi bi-hand-thumbs-up-fill px-2"></i>Vote</button>
                                     @else
                                         <br>
@@ -170,24 +182,55 @@ PIMUS 13 - Exhibition
             @endif
         </div>
 </section>
+{{--  Toaster Sweet Alert  --}}
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script>
+    const Toaster = Swal.mixin({
+        toast: true,
+        position: 'top-right',
+        iconColor: 'white',
+        customClass: {
+            popup: 'colored-toast'
+        },
+        showConfirmButton: false,
+        timer: 2000,
+        timerProgressBar: true
+    })
      $('.btn').on('click', function() {
-            if (!confirm("Are you sure?")) return
-            var idPoster = this.id;
-            idPoster = idPoster.slice(6);
-            console.log(idPoster);
-            $.ajax({
-                url: "{{ route('exhibition.vote', ['id' => ':id']) }}".replace(':id', idPoster),
-                type: "POST",
-                data: { 'idPoster': idPoster, '_token': '{{ csrf_token() }}' }, 
-                success: function (data) {
-                    console.error(data.message);
-                    location.reload();
-                },
-                error: function (xhr, status, error) {
-                    console.error(error);
+        if (!confirm("Are you sure?")) return
+        var idPoster = this.id;
+        idPoster = idPoster.slice(6);
+        // console.log(idPoster);
+        
+        $.ajax({
+            url: "{{ route('exhibition.vote', ['id' => ':id']) }}".replace(':id', idPoster),
+            type: "POST",
+            data: { 'idPoster': idPoster, '_token': '{{ csrf_token() }}' }, 
+            success: function (data) {
+                var iconStatus = 'error'
+                if(data[0].status == 1){
+                    iconStatus = 'success'
+                    
                 }
-            });
+                Swal.fire({
+                    icon: iconStatus,
+                    animation: true,
+                    title: data[0].msg,
+                    duration: 3000,
+                    timerProgressBar: true,
+                    showConfirmButton: false
+                });
+                
+                if(data[0].status == 1){
+                    setTimeout(() => {
+                        location.reload()
+                    }, 3001);
+                }
+            },
+            error: function (xhr, status, error) {
+                console.error(error);
+            }
         });
+    });
 </script>
 @endsection
