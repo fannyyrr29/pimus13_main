@@ -315,9 +315,9 @@ class AdminController extends Controller
         $judul = $request->addJudul;
         
         $addPoster = $request->file("addPoster");
-        
-        $addPoster->move('storage/poster/',$addPoster->getClientOriginalName());
-        $path_poster = 'storage/poster/'.$addPoster->getClientOriginalName();
+        $postername  = htmlspecialchars($addPoster->getClientOriginalName());
+        $addPoster->move('storage/poster/',$postername);
+        $path_poster = 'storage/poster/'.$postername;
 
         if ($teams_id != null && $judul != null && $addPoster != null) {
             
