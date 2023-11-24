@@ -46,47 +46,57 @@ class ExhibitionController extends Controller
         }
     }
 
-    public function vote($id)
+    public function vote(Request $request)
     {
+        $id = $request->idPoster;
+        $userID = (string)Auth::user()->nrp; 
         try {
             if (Auth::user()->email_verified_at != null) {
-                $likes = DB::table('submissions')
-                ->where('id', $id)->first()->like_count;
 
                 $tikets = Auth::user()->vote_tickets;
-
-                if ($tikets > 0) {
-                    $decreaseTickets = DB::table('users')
-                        ->where('nrp', (string)Auth::user()->nrp)
-                        ->update([
-                            'vote_tickets' => $tikets - 1
-                        ]);
-
-                    if ($decreaseTickets == true) {
-                        DB::table('submissions')
-                            ->where('id', $id)
-                            ->update([
-                                'like_count' => $likes + 1
+                    $vote =  DB::table('votes')
+                        ->select('users_id', 'posters_id')
+                        ->where('users_id','=', $userID)
+                        ->where('posters_id', '=', $id)
+                        ->get();
+                    if($vote->isEmpty())
+                    {
+                        if ($tikets > 0) {
+                            $decreaseTickets = DB::table('users')
+                                ->where('nrp', (string)Auth::user()->nrp)
+                                ->update([
+                                    'vote_tickets' => $tikets - 1
+                                ]);
+                        if ($decreaseTickets == true) {
+                            DB::table('votes')->insert([
+                                'posters_id' => $id,
+                                'users_id' => $userID
                             ]);
+                        }
+                        else {
+                            DB::table('users')
+                            ->where('nrp', (string)Auth::user()->nrp)
+                            ->update([
+                                'vote_tickets' => $tikets
+                            ]);
+    
+                            throw new Exception("Error decrease tickets");
+                        }
+    
+                        return back();
                     }
-                    else {
-                        DB::table('users')
-                        ->where('nrp', (string)Auth::user()->nrp)
-                        ->update([
-                            'vote_tickets' => $tikets
-                        ]);
-
-                        throw new Exception("Error decrease tickets");
+                    else
+                    {
+                        return redirect()->back()->withErrors(['errorMessage' => "Mohon maaf kesempatan vote anda telah habis, Terima Kasih telah melakukan vote"]);
                     }
-
-                    return back();
                 }
-                else
-                    return redirect()->back()->withErrors(['errorMessage' => "Mohon maaf Tiket Vote anda sudah habis, Terima Kasih telah melakukan vote"]);
+                else{
+                    return redirect()->back()->withErrors(['errorMessage' => "Mohon maaf anda sudah melakukan vote pada poster ini, Terima Kasih telah melakukan vote"]);
+                }
             }
-            else
+            else{
                 return redirect()->back()->withErrors(['errorMessage' => "Anda masih belum melakukan verifikasi, mohon segera lakukan verifikasi"]);
-
+            }
         } catch (\Exception $ex) {
             return redirect()->back()->withErrors(['errorMessage' => "Terjadi kesalahan saat melakukan proses Voting, silakan coba lagi"]);
         }

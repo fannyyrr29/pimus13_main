@@ -65,11 +65,11 @@ PIMUS 13 - Exhibition
                                 
                                 <div class="modal-footer">
                                     @if (!Auth::guest())
-                                        <p class="text-danger">vote left: {{ Auth::user()->vote_tickets }}</p>
+                                        <p class="text-danger">Vote left: {{ Auth::user()->vote_tickets }}</p>
                                     @endif
 
-                                    @if (time() <= strtotime("2023-12-1 12:00:00") && time() >= strtotime("2023-11-26 23:59:00"))
-                                        <button class="btn btn-success w-100"><i class="bi bi-hand-thumbs-up-fill px-2"></i>Vote</button>
+                                    @if (time() <= strtotime("2023-12-1 12:00:00") && time() >= strtotime("2023-10-26 23:59:00"))
+                                        <button class="btn btn-success w-100" id="button{{$poster->posters_id}}"><i class="bi bi-hand-thumbs-up-fill px-2"></i>Vote</button>
                                     @else
                                         <br>
                                         <h4 style="color: red">*) Masa Vote adalah 27 November - 1 Desember</h4>
@@ -170,4 +170,24 @@ PIMUS 13 - Exhibition
             @endif
         </div>
 </section>
+<script>
+     $('.btn').on('click', function() {
+            if (!confirm("Are you sure?")) return
+            var idPoster = this.id;
+            idPoster = idPoster.slice(6);
+            console.log(idPoster);
+            $.ajax({
+                url: "{{ route('exhibition.vote', ['id' => ':id']) }}".replace(':id', idPoster),
+                type: "POST",
+                data: { 'idPoster': idPoster, '_token': '{{ csrf_token() }}' }, 
+                success: function (data) {
+                    console.error(data.message);
+                    location.reload();
+                },
+                error: function (xhr, status, error) {
+                    console.error(error);
+                }
+            });
+        });
+</script>
 @endsection
