@@ -38,9 +38,9 @@
                         <td data-label="Competition Name">{{ $grp->name }}</td>
 
                         @if($grp->competition_categories_id == 1)
-                            <td data-label="Deadline">24 November 2023 12:00 WIB</td>
+                            <td data-label="Deadline">24 November 2023 13:00 WIB</td>
                             @php
-                                $datetime1 = new DateTime('2023-11-24 12:00:00');
+                                $datetime1 = new DateTime('2023-11-24 13:00:00');
                                 $datetime1 = $datetime1->format('Y-m-d H:i:s');
                             @endphp
                         @elseif($grp->competition_categories_id == 4)
@@ -50,9 +50,9 @@
                                 $datetime1 = $datetime1->format('Y-m-d H:i:s');
                             @endphp
                         @else
-                            <td data-label="Deadline">24 November 2023 12:00 WIB</td>
+                            <td data-label="Deadline">24 November 2023 13:00 WIB</td>
                             @php
-                                $datetime1 = new DateTime('2023-11-24 12:00:00');
+                                $datetime1 = new DateTime('2023-11-24 13:00:00');
                                 $datetime1 = $datetime1->format('Y-m-d H:i:s');
                             @endphp
                         @endif
@@ -271,12 +271,12 @@
 
         // Set the date we're counting down to
         if(idlomba == 1){
-            var countDownDate = new Date("Nov 24, 2023 12:00:00").getTime();
+            var countDownDate = new Date("Dec 05, 2022 23:59:59").getTime();
         }
         else if(idlomba == 4){
-            var countDownDate = new Date("Nov 24, 2023 12:00:00").getTime();
+            var countDownDate = new Date("Nov 20, 2022 23:59:59").getTime();
         }else{
-            var countDownDate = new Date("Nov 24, 2023 12:00:00").getTime();
+            var countDownDate = new Date("Dec 02, 2022 23:59:59").getTime();
         }
 
         // Update the count down every 1 second
@@ -313,7 +313,7 @@
                 minutes + "m " + seconds + "s" + ". Don't forget to submit!");
 
             // If the count down is finished, write some text
-            if (distance < 0) {
+            if (distance > 0) {
                 clearInterval(x);
                 $("#timer").text("Submission ends now.");
                 $(".btnSubmit").attr('disabled','true');
