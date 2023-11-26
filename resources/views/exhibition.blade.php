@@ -8,31 +8,17 @@ PIMUS 13 - Exhibition
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
 <section id="exhibition" style="margin-top: 150px;">
     <div class="container">
-        @if ($errors->any())
-            <div class="alert alert-danger" role="alert">
-                {{ $errors->first('errorMessage') }}
-            </div>
-        @endif
-
-        @if (Session::has('error'))
-            <div class="alert alert-danger" role="alert">
-                {{ Session::get('error') }}
-            </div>
-        @endif
-
 
         <div class="row mb-4">
             <div class="col-12 exhibition-title">
                 <h1 class="title">Exhibition</h1>
+                <p style="color: #ebb010">*)Tekan gambar untuk melakukan voting</p>
             </div>
         </div>
 
         <div class="row">
             @if ($posters->count() != 0)
-                @php
-                    // For submission counter
-                    $counter = 1;
-                @endphp
+            
                 @foreach ($posters as $index => $poster)
                     @if ($poster->path != null)
                         @php
@@ -97,83 +83,9 @@ PIMUS 13 - Exhibition
                         const myModal = new bootstrap.Modal(document.getElementById('modalId'), options)
                     
                     </script>
-                    {{-- <div class="modal fade" id="exhibitionCard{{ $poster->posters_id }}" tabindex="-1"
-                        aria-labelledby="exhibitionCardLabel" aria-hidden="true">
-                        <div class="modal-dialog modal-dialog-centered modal-xl">
-                            <div class="modal-content">
-                                <div class="modal-header" style="background-color: #ebb010;">
-                                    <h5 class="modal-title text-white" id="formExhibition">Exhibition Poster</h5>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                </div>
-                                <div class="modal-body">
-                                    <div class="container-fluid">
-                                        <form action="{{ route('exhibition.vote', [
-                                            'id' => $poster->posters_id
-                                        ]) }}" method="POST">
-                                            @csrf
-                                            <div class="row justify-content-center mb-3 exhibition-content">
-                                                    
-                                                <div class="col-lg-4 col-md-12 mt-3">
-                                                    <a href="{{ url($img) }}" target="_blank">
-                                                        <img class="exhibition-img"
-                                                            src="{{ url($img) }}"
-                                                            alt="{{ $cabang->name." ".$counter }}">
-                                                    </a>
-                                                </div>
-                                                        
-                                                <div class="col-lg-8 col-md-12 mt-3">
-                                                    <h1 class="ex-title">
-                                                        {{ $cabang->nama." ".$counter }}</h1>
-                                                        <h5>Jumlah votes: {{ $submission->like_count }}</h5>
-                                                    <p class="ex-by">
-                                                        Ketua :
-                                                        @if ($submission->teams_id != null)
-                                                            {{-- Get group leader name if no name
-                                                            @php
-                                                                $name = null;
-        
-                                                                foreach ($leaders as $leader) {
-                                                                    if ($leader->teams_id == $submission->teams_id)
-                                                                        $name = $leader->name;
-                                                                }
-                                                            @endphp
-                                                            
-                                                            @if ($name == null)
-                                                                <i>Error No Name</i>
-                                                            @else
-                                                                {{ $name }}
-                                                            @endif
-                                                        @else
-                                                            {{ $submission->name }}
-                                                        @endif
-                                                    </p>
-                                                    <p class="ex-desc">
-                                                        {{ $submission->description }}
-                                                    </p>
-                                                    <div class="div-vote">
-                                                        @if (!Auth::guest())
-                                                            <p class="text-danger">vote left: {{ Auth::user()->vote_tickets }}</p>
-                                                        @endif
-
-                                                        @if (time() <= strtotime("2023-11-10 00:00:00") && time() >= strtotime("2023-12-1 12:00:00"))
-                                                            <button type="submit" class="btnVote">Vote</button>
-                                                        @else
-                                                            <br>
-                                                            <h4 style="color: red">*) Masa Vote adalah 27 November - 1 Desember</h4>
-                                                        @endif
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </form>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div> --}}
+                    
                     @endif
-                        @php
-                            $counter++;
-                        @endphp
+
                     @endforeach
                 @else
                     <div class="alert alert-light" role="alert">
