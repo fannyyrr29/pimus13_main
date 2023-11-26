@@ -12,7 +12,7 @@ PIMUS 13 - Exhibition
         <div class="row mb-4">
             <div class="col-12 exhibition-title">
                 <h1 class="title">Exhibition</h1>
-                <p style="color: #ebb010">*)Tekan gambar untuk melakukan voting</p>
+                <p style="color: #ebb010">*)Tekan gambar untuk melihat lebih detil dan tombol vote</p>
             </div>
         </div>
 
