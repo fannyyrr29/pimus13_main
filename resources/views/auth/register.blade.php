@@ -112,7 +112,7 @@ input[type=number] {
                                             <p class="colorText">NRP: </p>
                                         </td>
                                         <td>
-                                            <input type="number" id="nrp" min='100000000' max='999999999' name="nrp" placeholder="" class="@error('nrp') is-invalid @enderror" maxlength="9" required>
+                                            <input type="tel" id="nrp" min='100000000' max='999999999' name="nrp" placeholder="Tanpa s" class="@error('nrp') is-invalid @enderror" maxlength="9" required>
                                         </td>
                                         @error('nrp')
                                             <span class="invalid-feedback" role="alert">

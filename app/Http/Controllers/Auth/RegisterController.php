@@ -92,11 +92,13 @@ class RegisterController extends Controller
             $user->password = Hash::make($request->password);
             $user->vote_tickets = 3;
             $user->role = "Umum";
-            event(new Registered($user));
+            $date = date('Y-m-d H:i:s');
+            $user->email_verified_at  = $date;
+            // event(new Registered($user));
             $user->save();
             
             if($user != null){
-                return redirect()->back()->with(session()->flash('alert-success', 'Your account has been created. Please login for verification link.'));
+                return redirect()->back()->with(session()->flash('alert-success', 'Akun berhasil dibuat, silahkan login kembali'));
             }
         } catch (\Throwable $th) {
             return redirect()->back()->with(session()->flash('alert-danger', 'Something went wrong!'));
