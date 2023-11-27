@@ -10,6 +10,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
+use App\Http\Controllers\Controller;
 
 class ExhibitionController extends Controller
 {
@@ -50,9 +51,16 @@ class ExhibitionController extends Controller
     public function vote(Request $request)
     {
         $msg = '';
-        $id = $request->idPoster;
-        $userID = (string)Auth::user()->nrp;
         $status = 0;
+        $id = $request->idPoster;
+        if(!Auth::user()->nrp){
+            return response()->json(array([
+                'msg' => 'Silahkan login terlebih dahulu',
+                'status' => $status,
+            ]), 200);
+        }
+        $userID = (string)Auth::user()->nrp;
+        
         
             if (Auth::user()->email_verified_at != null) {
 

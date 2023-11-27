@@ -67,8 +67,12 @@ PIMUS 13 - Exhibition
                                     @endif
 
                                     @if (time() <= strtotime("2023-12-1 12:00:00") && time() >= strtotime("2023-11-26 23:59:00"))
-                                        <button class="btn btn-success w-100" id="button{{$poster->posters_id}}"><i class="bi bi-hand-thumbs-up-fill px-2"></i>Vote</button>
-                                    @else
+                                        @if(Auth::user())
+                                            <button class="btn btn-success w-100" id="button{{$poster->posters_id}}"><i class="bi bi-hand-thumbs-up-fill px-2"></i>Vote</button>
+                                        @else
+                                            <h4 style="color: red">Silahkan Login Terlebih Dahulu</h4>
+                                        @endif
+                                        @else
                                         <br>
                                         <h4 style="color: red">*) Masa Vote adalah 27 November - 1 Desember</h4>
                                     @endif
