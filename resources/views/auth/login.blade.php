@@ -17,7 +17,7 @@
                             <table>
                                 <tr>
                                     <div class="transBox2">
-                                        <td style="width: 150px">
+                                        <td style="width: 100px">
                                             <p class="colorText">SNRP: </p>
                                         </td>
                                         <td>
