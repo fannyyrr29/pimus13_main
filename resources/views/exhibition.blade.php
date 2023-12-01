@@ -38,7 +38,7 @@ PIMUS 13 - Exhibition
                                         </i>
                                     </p>
 
-                                    <p>Votes: {{$likes[$index]}}</p>
+                                    {{-- <p>Votes: {{$likes[$index]}}</p> --}}
                                     
                                 </div>
                             </div>
@@ -59,7 +59,7 @@ PIMUS 13 - Exhibition
                                            {{$poster->name}}
                                         </i>
                                     </p>
-                                    <p>Votes: {{$likes[$index]}}</p>
+                                    {{-- <p>Votes: {{$likes[$index]}}</p> --}}
                                 </div>
                                 
                                 <div class="modal-footer">
